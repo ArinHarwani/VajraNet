@@ -1,0 +1,112 @@
+{
+  "contract_version": "1.0",
+  "mock": true,
+  "events": [
+    {
+      "id": "evt_mock_01",
+      "name": "Bengal Pre-Monsoon Squall (Synthetic)",
+      "is_no_storm": false,
+      "bbox": [
+        86.0,
+        21.5,
+        90.0,
+        25.5
+      ],
+      "grid": {
+        "res_deg": 0.1,
+        "nx": 40,
+        "ny": 40
+      },
+      "first_issue": "2025-05-15T08:00:00Z",
+      "last_issue": "2025-05-15T11:00:00Z",
+      "issue_step_min": 30,
+      "leads_min": [
+        30,
+        60,
+        90,
+        120,
+        150,
+        180
+      ],
+      "event_thr_mm_h": 5.0,
+      "reference": {
+        "label": "Synthetic Benchmark Scenario 1 (Kolkata Region)",
+        "url": "https://example.com/mock/evt_mock_01",
+        "verified": true
+      },
+      "points": [
+        {
+          "id": "p1_kolkata",
+          "name": "Kolkata City Center",
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        {
+          "id": "p2_burdwan",
+          "name": "Burdwan Junction",
+          "lat": 23.2324,
+          "lon": 87.8615
+        },
+        {
+          "id": "p3_kharagpur",
+          "name": "Kharagpur Station",
+          "lat": 22.3305,
+          "lon": 87.3237
+        }
+      ]
+    },
+    {
+      "id": "evt_mock_02",
+      "name": "Gangetic Plain Fair Weather Day (Synthetic Null)",
+      "is_no_storm": true,
+      "bbox": [
+        86.0,
+        21.5,
+        90.0,
+        25.5
+      ],
+      "grid": {
+        "res_deg": 0.1,
+        "nx": 40,
+        "ny": 40
+      },
+      "first_issue": "2025-05-16T08:00:00Z",
+      "last_issue": "2025-05-16T11:00:00Z",
+      "issue_step_min": 30,
+      "leads_min": [
+        30,
+        60,
+        90,
+        120,
+        150,
+        180
+      ],
+      "event_thr_mm_h": 5.0,
+      "reference": {
+        "label": "Synthetic Benchmark Scenario 2 (Clear Skies Control)",
+        "url": "https://example.com/mock/evt_mock_02",
+        "verified": true
+      },
+      "points": [
+        {
+          "id": "p1_kolkata",
+          "name": "Kolkata City Center",
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        {
+          "id": "p2_burdwan",
+          "name": "Burdwan Junction",
+          "lat": 23.2324,
+          "lon": 87.8615
+        },
+        {
+          "id": "p3_kharagpur",
+          "name": "Kharagpur Station",
+          "lat": 22.3305,
+          "lon": 87.3237
+        }
+      ]
+    }
+  ]
+}

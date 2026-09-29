@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResultsSchema",
+  "type": "object",
+  "required": [
+    "contract_version", "n_events", "n_points", "event_thr_mm_h",
+    "notes", "by_method", "by_lead", "alerts", "per_event", "blend_weight_ens"
+  ],
+  "properties": {
+    "contract_version": { "type": "string", "enum": ["1.0"] },
+    "n_events": { "type": "integer" },
+    "n_points": { "type": "integer" },
+    "event_thr_mm_h": { "type": "number" },
+    "notes": { "type": "string" },
+    "by_method": {
+      "type": "object",
+      "required": ["persistence", "extrapolation", "steps_ensemble", "lightgbm", "blend"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["POD", "FAR", "CSI", "brier"],
+        "properties": {
+          "POD": { "type": "number" },
+          "FAR": { "type": "number" },
+          "CSI": { "type": "number" },
+          "brier": { "type": "number" }
+        }
+      }
+    },
+    "by_lead": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "alerts": {
+      "type": "object",
+      "required": ["hit", "miss", "false_alarm", "correct_null", "median_lead_time_min"],
+      "properties": {
+        "hit": { "type": "integer" },
+        "miss": { "type": "integer" },
+        "false_alarm": { "type": "integer" },
+        "correct_null": { "type": "integer" },
+        "median_lead_time_min": { "type": "number" }
+      }
+    },
+    "per_event": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "hit", "miss", "false_alarm", "median_lead_time_min"],
+        "properties": {
+          "id": { "type": "string" },
+          "hit": { "type": "integer" },
+          "miss": { "type": "integer" },
+          "false_alarm": { "type": "integer" },
+          "median_lead_time_min": { "type": "number" }
+        }
+      }
+    },
+    "blend_weight_ens": { "type": "number" }
+  }
+}

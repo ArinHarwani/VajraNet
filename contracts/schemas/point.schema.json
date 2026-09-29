@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PointTimelineSchema",
+  "type": "object",
+  "required": ["contract_version", "event_id", "point", "summary", "timeline"],
+  "properties": {
+    "contract_version": { "type": "string", "enum": ["1.0"] },
+    "event_id": { "type": "string" },
+    "point": {
+      "type": "object",
+      "required": ["id", "name", "lat", "lon"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["observed_onset_start", "alert_fired_at", "lead_time_min", "outcome"],
+      "properties": {
+        "observed_onset_start": { "type": ["string", "null"] },
+        "alert_fired_at": { "type": ["string", "null"] },
+        "lead_time_min": { "type": ["number", "null"] },
+        "outcome": {
+          "type": "string",
+          "enum": ["hit", "miss", "false_alarm", "correct_null", "ongoing_at_start"]
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "issue_time", "rain_now_mm_h", "leads", "eta_window_min",
+          "motion", "confidence", "alert", "explain"
+        ],
+        "properties": {
+          "issue_time": { "type": "string" },
+          "rain_now_mm_h": { "type": "number" },
+          "leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "lead_min", "valid_start", "p_ens", "p_ml", "p_final",
+                "rain_p10", "rain_p50", "rain_p90", "lri", "severity"
+              ],
+              "properties": {
+                "lead_min": { "type": "integer" },
+                "valid_start": { "type": "string" },
+                "p_ens": { "type": "number" },
+                "p_ml": { "type": "number" },
+                "p_final": { "type": "number" },
+                "rain_p10": { "type": "number" },
+                "rain_p50": { "type": "number" },
+                "rain_p90": { "type": "number" },
+                "lri": { "type": "number" },
+                "severity": { "type": "string", "enum": ["low", "moderate", "strong", "severe"] }
+              }
+            }
+          },
+          "eta_window_min": {
+            "type": ["array", "null"],
+            "items": { "type": "number" }
+          },
+          "motion": {
+            "type": ["object", "null"],
+            "required": ["heading_deg", "from_deg", "speed_kmh"],
+            "properties": {
+              "heading_deg": { "type": "number" },
+              "from_deg": { "type": "number" },
+              "speed_kmh": { "type": "number" }
+            }
+          },
+          "confidence": {
+            "type": ["string", "null"],
+            "enum": ["high", "medium", "low", null]
+          },
+          "alert": {
+            "type": "object",
+            "required": ["state", "severity", "is_new", "reason"],
+            "properties": {
+              "state": { "type": "string", "enum": ["none", "alert", "emergency", "all_clear"] },
+              "severity": { "type": ["string", "null"] },
+              "is_new": { "type": "boolean" },
+              "reason": { "type": "string" }
+            }
+          },
+          "explain": {
+            "type": "object",
+            "required": ["cape", "cin", "t2m_c", "rh_pct", "top_features"],
+            "properties": {
+              "cape": { "type": "number" },
+              "cin": { "type": ["number", "null"] },
+              "t2m_c": { "type": "number" },
+              "rh_pct": { "type": "number" },
+              "top_features": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "label_en", "contribution"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "label_en": { "type": "string" },
+                    "contribution": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

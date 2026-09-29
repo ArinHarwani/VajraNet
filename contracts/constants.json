@@ -1,0 +1,24 @@
+{
+  "contract_version": "1.0",
+  "grid_res_deg": 0.1,
+  "issue_step_min": 30,
+  "leads_min": [30, 60, 90, 120, 150, 180],
+  "ensemble_members": 20,
+  "seed": 42,
+  "event_thr_mm_h": 5.0,
+  "neighbourhood": "3x3",
+  "cape_norm_max": 2500,
+  "lri_formula": "100 * clip(0.7*p_final + 0.3*clip(cape/2500,0,1), 0, 1)",
+  "severity_bins": {
+    "low": [0, 30],
+    "moderate": [30, 60],
+    "strong": [60, 80],
+    "severe": [80, 100]
+  },
+  "alert_lri": 60,
+  "emergency_lri": 80,
+  "alert_window_min": 60,
+  "all_clear_lri": 30,
+  "all_clear_consecutive_issues": 2,
+  "eta_p_final": 0.5
+}

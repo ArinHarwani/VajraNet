@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ColormapSchema",
+  "type": "object",
+  "required": ["contract_version", "unit", "rain_stops", "prob_stops"],
+  "properties": {
+    "contract_version": { "type": "string", "enum": ["1.0"] },
+    "unit": { "type": "string" },
+    "rain_stops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "color"],
+        "properties": {
+          "value": { "type": "number" },
+          "color": { "type": "string" }
+        }
+      }
+    },
+    "prob_stops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "color"],
+        "properties": {
+          "value": { "type": "number" },
+          "color": { "type": "string" }
+        }
+      }
+    }
+  }
+}

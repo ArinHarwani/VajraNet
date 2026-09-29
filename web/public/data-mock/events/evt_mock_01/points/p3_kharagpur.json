@@ -1,0 +1,869 @@
+{
+  "contract_version": "1.0",
+  "event_id": "evt_mock_01",
+  "point": {
+    "id": "p3_kharagpur",
+    "name": "Kharagpur Station",
+    "lat": 22.3305,
+    "lon": 87.3237
+  },
+  "summary": {
+    "observed_onset_start": "2025-05-15T11:30:00Z",
+    "alert_fired_at": "2025-05-15T10:45:00Z",
+    "lead_time_min": 45,
+    "outcome": "hit"
+  },
+  "timeline": [
+    {
+      "issue_time": "2025-05-15T08:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T08:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T08:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T09:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T09:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T10:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        45,
+        60
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 42.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "Organized convective squall line approaching from WSW (245\u00b0)."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T08:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T08:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T09:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T09:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T10:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        45,
+        60
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 42.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "Organized convective squall line approaching from WSW (245\u00b0)."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T09:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T09:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T09:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T10:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T11:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        45,
+        60
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 42.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "Organized convective squall line approaching from WSW (245\u00b0)."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T09:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T09:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T10:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T11:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T12:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        45,
+        60
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 42.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "alert",
+        "severity": "moderate",
+        "is_new": true,
+        "reason": "Organized convective squall line approaching from WSW (245\u00b0)."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T10:00:00Z",
+      "rain_now_mm_h": 1.2,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T10:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T11:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T12:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T12:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        15,
+        30
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 40.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "emergency",
+        "severity": "severe",
+        "is_new": true,
+        "reason": "Severe thunderstorm with high lightning risk arrival within 15-30 minutes."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T10:30:00Z",
+      "rain_now_mm_h": 18.5,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T10:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T11:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T12:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T12:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T13:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        0,
+        10
+      ],
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 38.0
+      },
+      "confidence": "high",
+      "alert": {
+        "state": "emergency",
+        "severity": "severe",
+        "is_new": true,
+        "reason": "Severe storm underway. Remain sheltered."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2025-05-15T11:00:00Z",
+      "rain_now_mm_h": 3.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2025-05-15T11:00:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2025-05-15T11:30:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2025-05-15T12:00:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2025-05-15T12:30:00Z",
+          "p_ens": 0.79,
+          "p_ml": 0.88,
+          "p_final": 0.83,
+          "rain_p10": 9.3,
+          "rain_p50": 23.3,
+          "rain_p90": 41.9,
+          "lri": 85.3,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2025-05-15T13:00:00Z",
+          "p_ens": 0.47,
+          "p_ml": 0.53,
+          "p_final": 0.5,
+          "rain_p10": 5.6,
+          "rain_p50": 14.0,
+          "rain_p90": 25.2,
+          "lri": 62.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2025-05-15T13:30:00Z",
+          "p_ens": 0.16,
+          "p_ml": 0.17,
+          "p_final": 0.17,
+          "rain_p10": 1.9,
+          "rain_p50": 4.7,
+          "rain_p90": 8.5,
+          "lri": 38.7,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 65.0,
+        "from_deg": 245.0,
+        "speed_kmh": 35.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "Storm cell moving away to ENE. Conditions improving."
+      },
+      "explain": {
+        "cape": 2250.0,
+        "cin": -18.0,
+        "t2m_c": 33.5,
+        "rh_pct": 74.0,
+        "top_features": [
+          {
+            "name": "cape",
+            "label_en": "Air instability (CAPE)",
+            "contribution": 0.38
+          },
+          {
+            "name": "reflectivity_advection",
+            "label_en": "Upwind Radar/Precip Advection",
+            "contribution": 0.32
+          },
+          {
+            "name": "rh_surface",
+            "label_en": "Boundary-layer Moisture",
+            "contribution": 0.18
+          },
+          {
+            "name": "cin",
+            "label_en": "Convective Inhibition CIN",
+            "contribution": -0.12
+          }
+        ]
+      }
+    }
+  ]
+}

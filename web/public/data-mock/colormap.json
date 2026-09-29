@@ -1,0 +1,52 @@
+{
+  "contract_version": "1.0",
+  "unit": "mm/h",
+  "rain_stops": [
+    {
+      "value": 0.1,
+      "color": "#00000000"
+    },
+    {
+      "value": 1.0,
+      "color": "#4fc3f799"
+    },
+    {
+      "value": 5.0,
+      "color": "#0288d1cc"
+    },
+    {
+      "value": 15.0,
+      "color": "#fbc02dcc"
+    },
+    {
+      "value": 30.0,
+      "color": "#f57c00e6"
+    },
+    {
+      "value": 50.0,
+      "color": "#d32f2fe6"
+    }
+  ],
+  "prob_stops": [
+    {
+      "value": 0.05,
+      "color": "#00000000"
+    },
+    {
+      "value": 0.25,
+      "color": "#81c78499"
+    },
+    {
+      "value": 0.5,
+      "color": "#fff176cc"
+    },
+    {
+      "value": 0.75,
+      "color": "#ffb74de6"
+    },
+    {
+      "value": 0.9,
+      "color": "#e57373e6"
+    }
+  ]
+}

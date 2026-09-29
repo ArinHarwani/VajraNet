@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SimScenariosSchema",
+  "type": "object",
+  "required": ["contract_version", "scenarios"],
+  "properties": {
+    "contract_version": { "type": "string", "enum": ["1.0"] },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "label", "start_distance_km", "bearing_from_deg",
+          "speed_kmh", "cross_track_km", "radius_km", "peak_lri",
+          "watch_eta_min", "emergency_eta_min"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "start_distance_km": { "type": "number" },
+          "bearing_from_deg": { "type": "number" },
+          "speed_kmh": { "type": "number" },
+          "cross_track_km": { "type": "number" },
+          "radius_km": { "type": "number" },
+          "peak_lri": { "type": "number" },
+          "watch_eta_min": { "type": "number" },
+          "emergency_eta_min": { "type": "number" }
+        }
+      }
+    }
+  }
+}
