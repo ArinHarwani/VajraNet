@@ -51,6 +51,22 @@ def generate_grid_points():
     return points
 
 
+# Shared session with retries
+session = requests.Session()
+from urllib3.util import Retry
+from requests.adapters import HTTPAdapter
+
+retries = Retry(
+    total=5,
+    backoff_factor=1.0,
+    status_forcelist=[429, 500, 502, 503, 504],
+    raise_on_status=False
+)
+adapter = HTTPAdapter(max_retries=retries)
+session.mount("https://", adapter)
+session.mount("http://", adapter)
+
+
 def download_predictor_for_point(date_str: str, lat: float, lon: float, force: bool = False):
     """
     Download hourly CAPE, CIN, T2m, RH, cloud cover, and winds for a single point and date.
@@ -72,9 +88,19 @@ def download_predictor_for_point(date_str: str, lat: float, lon: float, force: b
         "models": "gfs_seamless"
     }
 
-    resp = requests.get(OPEN_METEO_ARCHIVE_URL, params=params, timeout=20)
-    resp.raise_for_status()
-    data = resp.json()
+    for attempt in range(4):
+        try:
+            resp = session.get(OPEN_METEO_ARCHIVE_URL, params=params, timeout=25)
+            if resp.status_code == 429:
+                time.sleep(3.0 * (attempt + 1))
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except (requests.exceptions.RequestException, ConnectionResetError) as e:
+            if attempt == 3:
+                raise
+            time.sleep(2.0 * (attempt + 1))
 
     # Basic sanity check
     assert "hourly" in data, f"Response missing 'hourly' key for {lat}, {lon}"

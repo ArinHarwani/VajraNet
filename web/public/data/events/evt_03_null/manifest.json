@@ -1,0 +1,280 @@
+{
+  "contract_version": "1.0",
+  "event_id": "evt_03_null",
+  "image_coordinates": [
+    [
+      85.5,
+      26.0
+    ],
+    [
+      90.5,
+      26.0
+    ],
+    [
+      90.5,
+      21.0
+    ],
+    [
+      85.5,
+      21.0
+    ]
+  ],
+  "image_projection": "web-mercator-resampled",
+  "colormap": "../../colormap.json",
+  "obs": {
+    "2024-04-20T11:00:00Z": "obs/20240420T110000Z.png",
+    "2024-04-20T11:30:00Z": "obs/20240420T113000Z.png",
+    "2024-04-20T12:00:00Z": "obs/20240420T120000Z.png",
+    "2024-04-20T12:30:00Z": "obs/20240420T123000Z.png",
+    "2024-04-20T13:00:00Z": "obs/20240420T130000Z.png",
+    "2024-04-20T13:30:00Z": "obs/20240420T133000Z.png",
+    "2024-04-20T14:00:00Z": "obs/20240420T140000Z.png",
+    "2024-04-20T14:30:00Z": "obs/20240420T143000Z.png",
+    "2024-04-20T15:00:00Z": "obs/20240420T150000Z.png",
+    "2024-04-20T15:30:00Z": "obs/20240420T153000Z.png",
+    "2024-04-20T16:00:00Z": "obs/20240420T160000Z.png",
+    "2024-04-20T16:30:00Z": "obs/20240420T163000Z.png",
+    "2024-04-20T17:00:00Z": "obs/20240420T170000Z.png",
+    "2024-04-20T17:30:00Z": "obs/20240420T173000Z.png",
+    "2024-04-20T18:00:00Z": "obs/20240420T180000Z.png",
+    "2024-04-20T18:30:00Z": "obs/20240420T183000Z.png",
+    "2024-04-20T19:00:00Z": "obs/20240420T190000Z.png",
+    "2024-04-20T19:30:00Z": "obs/20240420T193000Z.png"
+  },
+  "forecast": {
+    "2024-04-20T12:00:00Z": {
+      "30": {
+        "mean": "forecast/20240420T120000Z/30/mean.png",
+        "prob": "forecast/20240420T120000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T120000Z/60/mean.png",
+        "prob": "forecast/20240420T120000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T120000Z/90/mean.png",
+        "prob": "forecast/20240420T120000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T120000Z/120/mean.png",
+        "prob": "forecast/20240420T120000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T120000Z/150/mean.png",
+        "prob": "forecast/20240420T120000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T120000Z/180/mean.png",
+        "prob": "forecast/20240420T120000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T12:30:00Z": {
+      "30": {
+        "mean": "forecast/20240420T123000Z/30/mean.png",
+        "prob": "forecast/20240420T123000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T123000Z/60/mean.png",
+        "prob": "forecast/20240420T123000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T123000Z/90/mean.png",
+        "prob": "forecast/20240420T123000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T123000Z/120/mean.png",
+        "prob": "forecast/20240420T123000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T123000Z/150/mean.png",
+        "prob": "forecast/20240420T123000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T123000Z/180/mean.png",
+        "prob": "forecast/20240420T123000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T13:00:00Z": {
+      "30": {
+        "mean": "forecast/20240420T130000Z/30/mean.png",
+        "prob": "forecast/20240420T130000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T130000Z/60/mean.png",
+        "prob": "forecast/20240420T130000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T130000Z/90/mean.png",
+        "prob": "forecast/20240420T130000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T130000Z/120/mean.png",
+        "prob": "forecast/20240420T130000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T130000Z/150/mean.png",
+        "prob": "forecast/20240420T130000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T130000Z/180/mean.png",
+        "prob": "forecast/20240420T130000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T13:30:00Z": {
+      "30": {
+        "mean": "forecast/20240420T133000Z/30/mean.png",
+        "prob": "forecast/20240420T133000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T133000Z/60/mean.png",
+        "prob": "forecast/20240420T133000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T133000Z/90/mean.png",
+        "prob": "forecast/20240420T133000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T133000Z/120/mean.png",
+        "prob": "forecast/20240420T133000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T133000Z/150/mean.png",
+        "prob": "forecast/20240420T133000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T133000Z/180/mean.png",
+        "prob": "forecast/20240420T133000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T14:00:00Z": {
+      "30": {
+        "mean": "forecast/20240420T140000Z/30/mean.png",
+        "prob": "forecast/20240420T140000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T140000Z/60/mean.png",
+        "prob": "forecast/20240420T140000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T140000Z/90/mean.png",
+        "prob": "forecast/20240420T140000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T140000Z/120/mean.png",
+        "prob": "forecast/20240420T140000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T140000Z/150/mean.png",
+        "prob": "forecast/20240420T140000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T140000Z/180/mean.png",
+        "prob": "forecast/20240420T140000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T14:30:00Z": {
+      "30": {
+        "mean": "forecast/20240420T143000Z/30/mean.png",
+        "prob": "forecast/20240420T143000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T143000Z/60/mean.png",
+        "prob": "forecast/20240420T143000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T143000Z/90/mean.png",
+        "prob": "forecast/20240420T143000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T143000Z/120/mean.png",
+        "prob": "forecast/20240420T143000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T143000Z/150/mean.png",
+        "prob": "forecast/20240420T143000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T143000Z/180/mean.png",
+        "prob": "forecast/20240420T143000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T15:00:00Z": {
+      "30": {
+        "mean": "forecast/20240420T150000Z/30/mean.png",
+        "prob": "forecast/20240420T150000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T150000Z/60/mean.png",
+        "prob": "forecast/20240420T150000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T150000Z/90/mean.png",
+        "prob": "forecast/20240420T150000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T150000Z/120/mean.png",
+        "prob": "forecast/20240420T150000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T150000Z/150/mean.png",
+        "prob": "forecast/20240420T150000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T150000Z/180/mean.png",
+        "prob": "forecast/20240420T150000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T15:30:00Z": {
+      "30": {
+        "mean": "forecast/20240420T153000Z/30/mean.png",
+        "prob": "forecast/20240420T153000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T153000Z/60/mean.png",
+        "prob": "forecast/20240420T153000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T153000Z/90/mean.png",
+        "prob": "forecast/20240420T153000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T153000Z/120/mean.png",
+        "prob": "forecast/20240420T153000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T153000Z/150/mean.png",
+        "prob": "forecast/20240420T153000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T153000Z/180/mean.png",
+        "prob": "forecast/20240420T153000Z/180/prob.png"
+      }
+    },
+    "2024-04-20T16:00:00Z": {
+      "30": {
+        "mean": "forecast/20240420T160000Z/30/mean.png",
+        "prob": "forecast/20240420T160000Z/30/prob.png"
+      },
+      "60": {
+        "mean": "forecast/20240420T160000Z/60/mean.png",
+        "prob": "forecast/20240420T160000Z/60/prob.png"
+      },
+      "90": {
+        "mean": "forecast/20240420T160000Z/90/mean.png",
+        "prob": "forecast/20240420T160000Z/90/prob.png"
+      },
+      "120": {
+        "mean": "forecast/20240420T160000Z/120/mean.png",
+        "prob": "forecast/20240420T160000Z/120/prob.png"
+      },
+      "150": {
+        "mean": "forecast/20240420T160000Z/150/mean.png",
+        "prob": "forecast/20240420T160000Z/150/prob.png"
+      },
+      "180": {
+        "mean": "forecast/20240420T160000Z/180/mean.png",
+        "prob": "forecast/20240420T160000Z/180/prob.png"
+      }
+    }
+  }
+}

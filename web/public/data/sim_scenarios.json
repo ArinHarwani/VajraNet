@@ -1,0 +1,29 @@
+{
+  "contract_version": "1.0",
+  "scenarios": [
+    {
+      "id": "demo_squall",
+      "label": "SIMULATION - Pre-Monsoon Severe Squall",
+      "start_distance_km": 40.0,
+      "bearing_from_deg": 245.0,
+      "speed_kmh": 40.0,
+      "cross_track_km": 0.0,
+      "radius_km": 14.0,
+      "peak_lri": 92.0,
+      "watch_eta_min": 45.0,
+      "emergency_eta_min": 15.0
+    },
+    {
+      "id": "demo_coastal_storm",
+      "label": "SIMULATION - Coastal Convective Cell",
+      "start_distance_km": 25.0,
+      "bearing_from_deg": 190.0,
+      "speed_kmh": 32.0,
+      "cross_track_km": 2.0,
+      "radius_km": 10.0,
+      "peak_lri": 78.0,
+      "watch_eta_min": 35.0,
+      "emergency_eta_min": 12.0
+    }
+  ]
+}

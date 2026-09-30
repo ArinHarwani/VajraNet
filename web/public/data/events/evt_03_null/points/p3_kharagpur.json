@@ -1,0 +1,1089 @@
+{
+  "contract_version": "1.0",
+  "event_id": "evt_03_null",
+  "point": {
+    "id": "p3_kharagpur",
+    "name": "Kharagpur Station",
+    "lat": 22.3305,
+    "lon": 87.3237
+  },
+  "summary": {
+    "observed_onset_start": null,
+    "alert_fired_at": null,
+    "lead_time_min": null,
+    "outcome": "correct_null"
+  },
+  "timeline": [
+    {
+      "issue_time": "2024-04-20T12:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T12:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.09,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T12:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.17,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T13:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.08,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T13:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.02,
+          "rain_p90": 0.12,
+          "lri": 6.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T14:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.013,
+          "p_final": 0.004,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.29,
+          "lri": 6.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.016,
+          "p_final": 0.005,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.28,
+          "lri": 6.7,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 530.0,
+        "cin": null,
+        "t2m_c": 38.8,
+        "rh_pct": 23.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.8825
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.7679
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.323
+          },
+          {
+            "name": "t2m",
+            "label_en": "t2m = 38.8 (increases risk)",
+            "contribution": 0.2485
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T12:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T12:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.11,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T13:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.09,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T13:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.21,
+          "lri": 6.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T14:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.09,
+          "rain_p90": 0.22,
+          "lri": 6.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.013,
+          "p_final": 0.004,
+          "rain_p10": 0.0,
+          "rain_p50": 0.06,
+          "rain_p90": 0.3,
+          "lri": 6.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.016,
+          "p_final": 0.005,
+          "rain_p10": 0.0,
+          "rain_p50": 0.04,
+          "rain_p90": 0.23,
+          "lri": 6.7,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 530.0,
+        "cin": null,
+        "t2m_c": 38.8,
+        "rh_pct": 23.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.8825
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.7679
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.323
+          },
+          {
+            "name": "t2m",
+            "label_en": "t2m = 38.8 (increases risk)",
+            "contribution": 0.2485
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T13:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T13:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.1,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T13:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.12,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T14:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.22,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.02,
+          "rain_p90": 0.13,
+          "lri": 7.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.011,
+          "p_final": 0.003,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.16,
+          "lri": 7.3,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.013,
+          "p_final": 0.004,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.21,
+          "lri": 7.3,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 590.0,
+        "cin": null,
+        "t2m_c": 35.8,
+        "rh_pct": 32.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.8622
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.757
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3373
+          },
+          {
+            "name": "storm_speed_kmh",
+            "label_en": "Storm tracking at 0 km/h toward location",
+            "contribution": 0.1761
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T13:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T13:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.12,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T14:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.09,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.07,
+          "rain_p90": 0.16,
+          "lri": 7.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.04,
+          "rain_p90": 0.17,
+          "lri": 7.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.011,
+          "p_final": 0.003,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.23,
+          "lri": 7.3,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.013,
+          "p_final": 0.004,
+          "rain_p10": 0.0,
+          "rain_p50": 0.07,
+          "rain_p90": 0.26,
+          "lri": 7.3,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 590.0,
+        "cin": null,
+        "t2m_c": 35.8,
+        "rh_pct": 32.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.8622
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.757
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3373
+          },
+          {
+            "name": "storm_speed_kmh",
+            "label_en": "Storm tracking at 0 km/h toward location",
+            "contribution": 0.1761
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T14:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T14:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.05,
+          "lri": 5.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.08,
+          "lri": 5.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.14,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.12,
+          "rain_p90": 0.25,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.15,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.04,
+          "rain_p90": 0.23,
+          "lri": 5.6,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 460.0,
+        "cin": null,
+        "t2m_c": 34.4,
+        "rh_pct": 35.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.958
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.6831
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3306
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 0.0 (reduces risk)",
+            "contribution": -0.1667
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T14:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T14:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.08,
+          "lri": 5.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.13,
+          "lri": 5.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.2,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.04,
+          "rain_p90": 0.25,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.07,
+          "rain_p90": 0.14,
+          "lri": 5.6,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.1,
+          "rain_p90": 0.24,
+          "lri": 5.6,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 460.0,
+        "cin": null,
+        "t2m_c": 34.4,
+        "rh_pct": 35.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.958
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.6831
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3306
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 0.0 (reduces risk)",
+            "contribution": -0.1667
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T15:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.09,
+          "lri": 6.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.18,
+          "lri": 6.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.07,
+          "rain_p90": 0.19,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.18,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.16,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.007,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.04,
+          "rain_p90": 0.14,
+          "lri": 6.3,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 510.0,
+        "cin": null,
+        "t2m_c": 33.5,
+        "rh_pct": 37.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.9538
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.7136
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3341
+          },
+          {
+            "name": "t2m",
+            "label_en": "t2m = 33.5 (increases risk)",
+            "contribution": 0.1716
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T15:30:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.07,
+          "lri": 6.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.02,
+          "rain_p90": 0.1,
+          "lri": 6.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.07,
+          "rain_p90": 0.19,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.17,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.21,
+          "lri": 6.2,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T18:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.007,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.06,
+          "rain_p90": 0.28,
+          "lri": 6.3,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 510.0,
+        "cin": null,
+        "t2m_c": 33.5,
+        "rh_pct": 37.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -0.9538
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.7136
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3341
+          },
+          {
+            "name": "t2m",
+            "label_en": "t2m = 33.5 (increases risk)",
+            "contribution": 0.1716
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-04-20T16:00:00Z",
+      "rain_now_mm_h": 0.0,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-04-20T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.001,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.02,
+          "rain_p90": 0.09,
+          "lri": 11.9,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-04-20T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.0,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.12,
+          "lri": 11.9,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-04-20T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.06,
+          "rain_p90": 0.17,
+          "lri": 11.9,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-04-20T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.0,
+          "rain_p90": 0.16,
+          "lri": 12.0,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-04-20T18:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.08,
+          "rain_p90": 0.25,
+          "lri": 12.0,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-04-20T18:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.13,
+          "rain_p90": 0.28,
+          "lri": 12.0,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 180.0,
+        "from_deg": 0.0,
+        "speed_kmh": 0.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 990.0,
+        "cin": null,
+        "t2m_c": 32.9,
+        "rh_pct": 41.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 150 km upstream",
+            "contribution": -1.0169
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.7006
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 0.0 mm/h rain rate",
+            "contribution": -0.3588
+          },
+          {
+            "name": "storm_speed_kmh",
+            "label_en": "Storm tracking at 0 km/h toward location",
+            "contribution": 0.1865
+          }
+        ]
+      }
+    }
+  ]
+}

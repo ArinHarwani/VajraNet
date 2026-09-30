@@ -1,0 +1,165 @@
+{
+  "contract_version": "1.0",
+  "mock": false,
+  "events": [
+    {
+      "id": "evt_01",
+      "name": "Bengal Pre-Monsoon Heatwave Break Squall (2024-05-07)",
+      "is_no_storm": false,
+      "bbox": [
+        85.5,
+        21.0,
+        90.5,
+        26.0
+      ],
+      "grid": {
+        "res_deg": 0.1,
+        "nx": 50,
+        "ny": 50
+      },
+      "first_issue": "2024-05-07T12:00:00Z",
+      "last_issue": "2024-05-07T16:00:00Z",
+      "issue_step_min": 30,
+      "leads_min": [
+        30,
+        60,
+        90,
+        120,
+        150,
+        180
+      ],
+      "event_thr_mm_h": 5.0,
+      "reference": {
+        "label": "LiveMint: South Bengal Thunderstorm & Lightning Warning",
+        "url": "https://www.livemint.com/news/india/heatwave-to-abate-in-kolkata-as-met-issues-thunderstorm-warning-over-south-bengal-details-here-11714973599982.html",
+        "verified": true
+      },
+      "points": [
+        {
+          "id": "p1_kolkata",
+          "name": "Kolkata City Center",
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        {
+          "id": "p2_burdwan",
+          "name": "Burdwan Junction",
+          "lat": 23.2324,
+          "lon": 87.8615
+        },
+        {
+          "id": "p3_kharagpur",
+          "name": "Kharagpur Station",
+          "lat": 22.3305,
+          "lon": 87.3237
+        }
+      ]
+    },
+    {
+      "id": "evt_02",
+      "name": "South Bengal Severe Convective Squall Line (2024-05-09)",
+      "is_no_storm": false,
+      "bbox": [
+        85.5,
+        21.0,
+        90.5,
+        26.0
+      ],
+      "grid": {
+        "res_deg": 0.1,
+        "nx": 50,
+        "ny": 50
+      },
+      "first_issue": "2024-05-09T12:00:00Z",
+      "last_issue": "2024-05-09T16:00:00Z",
+      "issue_step_min": 30,
+      "leads_min": [
+        30,
+        60,
+        90,
+        120,
+        150,
+        180
+      ],
+      "event_thr_mm_h": 5.0,
+      "reference": {
+        "label": "Times of India: Squall and hailstorm in South Bengal districts",
+        "url": "https://timesofindia.indiatimes.com/city/kolkata/squall-hailstorm-likely-in-south-bengal-districts-today/articleshow/109980838.cms",
+        "verified": true
+      },
+      "points": [
+        {
+          "id": "p1_kolkata",
+          "name": "Kolkata City Center",
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        {
+          "id": "p2_burdwan",
+          "name": "Burdwan Junction",
+          "lat": 23.2324,
+          "lon": 87.8615
+        },
+        {
+          "id": "p3_kharagpur",
+          "name": "Kharagpur Station",
+          "lat": 22.3305,
+          "lon": 87.3237
+        }
+      ]
+    },
+    {
+      "id": "evt_03_null",
+      "name": "Gangetic Bengal Extreme Heatwave (2024-04-20 Null Control)",
+      "is_no_storm": true,
+      "bbox": [
+        85.5,
+        21.0,
+        90.5,
+        26.0
+      ],
+      "grid": {
+        "res_deg": 0.1,
+        "nx": 50,
+        "ny": 50
+      },
+      "first_issue": "2024-04-20T12:00:00Z",
+      "last_issue": "2024-04-20T16:00:00Z",
+      "issue_step_min": 30,
+      "leads_min": [
+        30,
+        60,
+        90,
+        120,
+        150,
+        180
+      ],
+      "event_thr_mm_h": 5.0,
+      "reference": {
+        "label": "Times of India: Kolkata records highest April temperature in 50 years (No Rain)",
+        "url": "https://timesofindia.indiatimes.com/city/kolkata/kolkata-records-highest-april-temp-in-50-years/articleshow/109462811.cms",
+        "verified": true
+      },
+      "points": [
+        {
+          "id": "p1_kolkata",
+          "name": "Kolkata City Center",
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        {
+          "id": "p2_burdwan",
+          "name": "Burdwan Junction",
+          "lat": 23.2324,
+          "lon": 87.8615
+        },
+        {
+          "id": "p3_kharagpur",
+          "name": "Kharagpur Station",
+          "lat": 22.3305,
+          "lon": 87.3237
+        }
+      ]
+    }
+  ]
+}

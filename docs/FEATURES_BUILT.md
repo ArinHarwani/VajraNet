@@ -142,7 +142,48 @@ All files in `web/public/data-mock/` comply with **Contract Version 1.0**:
 
 ---
 
-## 🧪 4. Post-Project Acceptance Checklist (Final Verification)
+## 🛰️ 3. Person A — Data Engineering Pipeline Inventory
+
+* **Authentication & Ingest:**
+  - Automated NASA Earthdata OAuth2 & EULA authorization script (`pipeline/raw_ingest/approve_gesdisc.py`).
+  - GPM IMERG Early Run L3 Half-Hourly V07B parallel downloader with checksum caching (`pipeline/raw_ingest/01_download_imerg.py`).
+  - Open-Meteo Historical Reanalysis API downloader with rate limiting and exponential backoff (`pipeline/raw_ingest/02_download_predictors.py`).
+* **QA & Verification:**
+  - Multi-frame automated audit tool generating 6-frame diagnostic map grids and NaN/corruption metrics (`pipeline/raw_ingest/03_inspect.py`).
+  - Verified 3 real-world datasets:
+    - `evt_01` (2024-05-07): Severe Kalbaishakhi Convective Squall (Max 41.25 mm/h, 48/48 frames, 0% NaN).
+    - `evt_02` (2024-05-09): Severe Convective Squall Line (Max 34.36 mm/h, 48/48 frames, 0% NaN).
+    - `evt_03_null` (2024-04-20): Gangetic Plain Extreme Heatwave Null Control (Max 0.25 mm/h, 48/48 frames, 0% NaN).
+* **Array Preprocessing & Packaging:**
+  - Standardized coordinate grid construction (50x50 cells at 0.1° resolution, Row 0 = North, Col 0 = West, `pipeline/shared/geo.py`).
+  - Comprehensive ISO-8601 UTC time utilities and IMERG issue time calculation (`pipeline/shared/time_utils.py`).
+  - Unified array packager producing compressed `.npz` files with rain rates, CAPE, T2m, RH, and cloud cover (`pipeline/raw_ingest/04_preprocess.py`).
+
+---
+
+## ⚡ 4. Person B — ML & Nowcasting Engine Inventory
+
+* **Optical Flow & Motion Kinematics:**
+  - Dense Farneback optical flow estimation tracking convective storm displacement, translation speed in km/h, and compass heading degrees (`nowcast/engine/optical_flow.py`).
+* **Advection & Stochastic Ensemble Nowcasting:**
+  - Semi-Lagrangian backward advection engine using bilinear interpolation for numerical stability across 30 to 180 min leads (`nowcast/engine/extrapolation.py`).
+  - 20-member stochastic ensemble generator with S-PROG spatial cascade noise and convective dissipation damping (`nowcast/engine/ensemble.py`).
+* **Machine Learning & Explainable AI:**
+  - 12-feature spatio-temporal feature extractor combining radar observations, kinematic advection, upstream convective core distance, CAPE, and temperature tendencies (`nowcast/models/lgbm_model.py`).
+  - LightGBM binary classifier predicting $P(\text{rain} \ge 5.0\text{ mm/h})$ trained on strictly held-out historical event days.
+  - Tree SHAP explainer providing quantitative feature contributions for every hyperlocal point forecast.
+* **Calibrated Blending & Risk Indexing:**
+  - Ensemble-ML probability blend ($P_{\text{final}} = 0.7 P_{\text{ens}} + 0.3 P_{\text{ml}}$) (`nowcast/engine/blend.py`).
+  - Lightning Risk Index (LRI) formula combining convective rain probability with normalized CAPE instability.
+  - Automated ETA arrival window estimator and severity classification (`low`, `moderate`, `strong`, `severe`).
+* **Validation & Production Delivery:**
+  - Empirical scorecard calculator evaluating POD, FAR, CSI, and Brier score against persistence and extrapolation baselines (`results.json`).
+  - Contract-compliant Web Exporter rendering color-mapped 200x200 PNG radar overlays, point timelines, and manifest files (`nowcast/export/web_exporter.py`).
+  - 100% compliance verified by `contracts/validate.py` across 3 events, 9 stations, and 378 PNG frames.
+
+---
+
+## 🧪 5. Post-Project Acceptance Checklist (Final Verification)
 
 When the entire project is completed and Person A and B have plugged in their real data, use this checklist to confirm final readiness:
 

@@ -1,0 +1,1107 @@
+{
+  "contract_version": "1.0",
+  "event_id": "evt_02",
+  "point": {
+    "id": "p3_kharagpur",
+    "name": "Kharagpur Station",
+    "lat": 22.3305,
+    "lon": 87.3237
+  },
+  "summary": {
+    "observed_onset_start": "2024-05-09T12:00:00Z",
+    "alert_fired_at": "2024-05-09T12:00:00Z",
+    "lead_time_min": 45.0,
+    "outcome": "hit"
+  },
+  "timeline": [
+    {
+      "issue_time": "2024-05-09T12:00:00Z",
+      "rain_now_mm_h": 18.36,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T12:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.988,
+          "p_final": 0.996,
+          "rain_p10": 19.91,
+          "rain_p50": 21.67,
+          "rain_p90": 24.1,
+          "lri": 80.2,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T12:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.978,
+          "p_final": 0.993,
+          "rain_p10": 20.65,
+          "rain_p50": 22.58,
+          "rain_p90": 24.86,
+          "lri": 80.0,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T13:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.965,
+          "p_final": 0.99,
+          "rain_p10": 16.56,
+          "rain_p50": 20.32,
+          "rain_p90": 23.6,
+          "lri": 79.7,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T13:30:00Z",
+          "p_ens": 0.8,
+          "p_ml": 0.962,
+          "p_final": 0.849,
+          "rain_p10": 5.62,
+          "rain_p50": 16.77,
+          "rain_p90": 22.64,
+          "lri": 69.8,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T14:00:00Z",
+          "p_ens": 0.7,
+          "p_ml": 0.692,
+          "p_final": 0.698,
+          "rain_p10": 3.52,
+          "rain_p50": 7.16,
+          "rain_p90": 19.11,
+          "lri": 59.3,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 0.55,
+          "p_ml": 0.692,
+          "p_final": 0.593,
+          "rain_p10": 2.94,
+          "rain_p50": 6.22,
+          "rain_p90": 13.52,
+          "lri": 51.9,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 90.7,
+        "from_deg": 270.7,
+        "speed_kmh": 52.0
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "emergency",
+        "severity": "severe",
+        "is_new": true,
+        "reason": "Severe thunderstorm & lightning threat (LRI 80) within 60 min"
+      },
+      "explain": {
+        "cape": 870.0,
+        "cin": null,
+        "t2m_c": 31.9,
+        "rh_pct": 51.0,
+        "top_features": [
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 18.4 (increases risk)",
+            "contribution": 2.8678
+          },
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 3 km upstream",
+            "contribution": 2.806
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 22.3 mm/h rain rate",
+            "contribution": 2.65
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (increases risk)",
+            "contribution": 0.4418
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T12:30:00Z",
+      "rain_now_mm_h": 27.28,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T12:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.988,
+          "p_final": 0.997,
+          "rain_p10": 24.43,
+          "rain_p50": 25.63,
+          "rain_p90": 27.34,
+          "lri": 80.2,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T13:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.984,
+          "p_final": 0.995,
+          "rain_p10": 21.98,
+          "rain_p50": 24.22,
+          "rain_p90": 26.02,
+          "lri": 80.1,
+          "severity": "severe"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T13:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.96,
+          "p_final": 0.988,
+          "rain_p10": 17.94,
+          "rain_p50": 21.54,
+          "rain_p90": 26.09,
+          "lri": 79.6,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T14:00:00Z",
+          "p_ens": 0.95,
+          "p_ml": 0.956,
+          "p_final": 0.952,
+          "rain_p10": 7.53,
+          "rain_p50": 16.93,
+          "rain_p90": 23.89,
+          "lri": 77.1,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 0.8,
+          "p_ml": 0.478,
+          "p_final": 0.704,
+          "rain_p10": 4.88,
+          "rain_p50": 10.92,
+          "rain_p90": 19.49,
+          "lri": 59.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.55,
+          "p_ml": 0.409,
+          "p_final": 0.508,
+          "rain_p10": 5.04,
+          "rain_p50": 8.14,
+          "rain_p90": 17.33,
+          "lri": 46.0,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 96.4,
+        "from_deg": 276.4,
+        "speed_kmh": 29.1
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "emergency",
+        "severity": "severe",
+        "is_new": false,
+        "reason": "Severe thunderstorm & lightning threat (LRI 80) within 60 min"
+      },
+      "explain": {
+        "cape": 870.0,
+        "cin": null,
+        "t2m_c": 31.9,
+        "rh_pct": 51.0,
+        "top_features": [
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 25.6 mm/h rain rate",
+            "contribution": 2.639
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 27.3 (increases risk)",
+            "contribution": 2.6324
+          },
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 8 km upstream",
+            "contribution": 2.0646
+          },
+          {
+            "name": "rain_tendency_30m",
+            "label_en": "Cell intensification tendency of +8.9 mm/h over past 30 min",
+            "contribution": 1.1214
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T13:00:00Z",
+      "rain_now_mm_h": 27.79,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T13:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.98,
+          "p_final": 0.994,
+          "rain_p10": 24.65,
+          "rain_p50": 25.37,
+          "rain_p90": 27.46,
+          "lri": 74.5,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T13:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.969,
+          "p_final": 0.991,
+          "rain_p10": 21.98,
+          "rain_p50": 24.31,
+          "rain_p90": 26.36,
+          "lri": 74.3,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T14:00:00Z",
+          "p_ens": 0.95,
+          "p_ml": 0.823,
+          "p_final": 0.912,
+          "rain_p10": 17.35,
+          "rain_p50": 21.48,
+          "rain_p90": 26.24,
+          "lri": 68.8,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 0.95,
+          "p_ml": 0.78,
+          "p_final": 0.899,
+          "rain_p10": 10.31,
+          "rain_p50": 18.67,
+          "rain_p90": 23.57,
+          "lri": 67.9,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.7,
+          "p_ml": 0.165,
+          "p_final": 0.54,
+          "rain_p10": 3.42,
+          "rain_p50": 10.09,
+          "rain_p90": 18.03,
+          "lri": 42.7,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.5,
+          "p_ml": 0.153,
+          "p_final": 0.396,
+          "rain_p10": 0.33,
+          "rain_p50": 4.85,
+          "rain_p90": 17.17,
+          "lri": 32.6,
+          "severity": "moderate"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 92.2,
+        "from_deg": 272.2,
+        "speed_kmh": 22.6
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "alert",
+        "severity": "strong",
+        "is_new": false,
+        "reason": "Elevated thunderstorm & lightning risk (LRI 74) tracking toward station"
+      },
+      "explain": {
+        "cape": 410.0,
+        "cin": null,
+        "t2m_c": 30.8,
+        "rh_pct": 54.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 3 km upstream",
+            "contribution": 2.7048
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 25.7 mm/h rain rate",
+            "contribution": 2.5725
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 27.8 (increases risk)",
+            "contribution": 2.3838
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (increases risk)",
+            "contribution": 0.5172
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T13:30:00Z",
+      "rain_now_mm_h": 26.72,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T13:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.978,
+          "p_final": 0.994,
+          "rain_p10": 25.25,
+          "rain_p50": 28.42,
+          "rain_p90": 31.03,
+          "lri": 74.5,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T14:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.957,
+          "p_final": 0.987,
+          "rain_p10": 17.46,
+          "rain_p50": 22.03,
+          "rain_p90": 25.46,
+          "lri": 74.0,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.79,
+          "p_final": 0.937,
+          "rain_p10": 7.83,
+          "rain_p50": 16.55,
+          "rain_p90": 23.91,
+          "lri": 70.5,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.65,
+          "p_ml": 0.37,
+          "p_final": 0.566,
+          "rain_p10": 3.55,
+          "rain_p50": 11.28,
+          "rain_p90": 19.83,
+          "lri": 44.5,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.35,
+          "p_ml": 0.098,
+          "p_final": 0.274,
+          "rain_p10": 2.26,
+          "rain_p50": 4.74,
+          "rain_p90": 10.08,
+          "lri": 24.1,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.15,
+          "p_ml": 0.096,
+          "p_final": 0.134,
+          "rain_p10": 0.82,
+          "rain_p50": 4.35,
+          "rain_p90": 6.84,
+          "lri": 14.3,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 88.9,
+        "from_deg": 268.9,
+        "speed_kmh": 23.3
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "alert",
+        "severity": "strong",
+        "is_new": false,
+        "reason": "Elevated thunderstorm & lightning risk (LRI 74) tracking toward station"
+      },
+      "explain": {
+        "cape": 410.0,
+        "cin": null,
+        "t2m_c": 30.8,
+        "rh_pct": 54.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 3 km upstream",
+            "contribution": 2.8121
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 31.6 mm/h rain rate",
+            "contribution": 2.5862
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 26.7 (increases risk)",
+            "contribution": 2.238
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (increases risk)",
+            "contribution": 0.781
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T14:00:00Z",
+      "rain_now_mm_h": 26.36,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T14:00:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.977,
+          "p_final": 0.993,
+          "rain_p10": 19.12,
+          "rain_p50": 22.45,
+          "rain_p90": 24.19,
+          "lri": 69.5,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.957,
+          "p_final": 0.987,
+          "rain_p10": 12.03,
+          "rain_p50": 17.3,
+          "rain_p90": 21.34,
+          "lri": 69.1,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.25,
+          "p_ml": 0.165,
+          "p_final": 0.224,
+          "rain_p10": 1.73,
+          "rain_p50": 3.24,
+          "rain_p90": 10.15,
+          "lri": 15.7,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.1,
+          "p_ml": 0.144,
+          "p_final": 0.113,
+          "rain_p10": 1.7,
+          "rain_p50": 2.78,
+          "rain_p90": 7.6,
+          "lri": 7.9,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.1,
+          "p_ml": 0.048,
+          "p_final": 0.085,
+          "rain_p10": 0.07,
+          "rain_p50": 2.41,
+          "rain_p90": 4.43,
+          "lri": 5.9,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.052,
+          "p_final": 0.015,
+          "rain_p10": 0.16,
+          "rain_p50": 1.61,
+          "rain_p90": 3.03,
+          "lri": 1.1,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 100.3,
+        "from_deg": 280.3,
+        "speed_kmh": 24.7
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "alert",
+        "severity": "strong",
+        "is_new": false,
+        "reason": "Elevated thunderstorm & lightning risk (LRI 70) tracking toward station"
+      },
+      "explain": {
+        "cape": 0.0,
+        "cin": null,
+        "t2m_c": 27.2,
+        "rh_pct": 57.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 3 km upstream",
+            "contribution": 2.7836
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 26.2 mm/h rain rate",
+            "contribution": 2.6429
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 26.4 (increases risk)",
+            "contribution": 2.3563
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (increases risk)",
+            "contribution": 0.8529
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T14:30:00Z",
+      "rain_now_mm_h": 27.05,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T14:30:00Z",
+          "p_ens": 1.0,
+          "p_ml": 0.977,
+          "p_final": 0.993,
+          "rain_p10": 19.38,
+          "rain_p50": 22.97,
+          "rain_p90": 24.67,
+          "lri": 69.5,
+          "severity": "strong"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.4,
+          "p_ml": 0.656,
+          "p_final": 0.477,
+          "rain_p10": 2.42,
+          "rain_p50": 4.34,
+          "rain_p90": 11.49,
+          "lri": 33.4,
+          "severity": "moderate"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.05,
+          "p_ml": 0.453,
+          "p_final": 0.171,
+          "rain_p10": 1.78,
+          "rain_p50": 3.06,
+          "rain_p90": 4.12,
+          "lri": 12.0,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.05,
+          "p_ml": 0.329,
+          "p_final": 0.134,
+          "rain_p10": 0.78,
+          "rain_p50": 1.94,
+          "rain_p90": 3.73,
+          "lri": 9.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.119,
+          "p_final": 0.036,
+          "rain_p10": 0.5,
+          "rain_p50": 1.75,
+          "rain_p90": 3.33,
+          "lri": 2.5,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.105,
+          "p_final": 0.032,
+          "rain_p10": 0.23,
+          "rain_p50": 1.54,
+          "rain_p90": 3.19,
+          "lri": 2.2,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": [
+        30,
+        60
+      ],
+      "motion": {
+        "heading_deg": 89.8,
+        "from_deg": 269.8,
+        "speed_kmh": 28.7
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "alert",
+        "severity": "strong",
+        "is_new": false,
+        "reason": "Elevated thunderstorm & lightning risk (LRI 70) tracking toward station"
+      },
+      "explain": {
+        "cape": 0.0,
+        "cin": null,
+        "t2m_c": 27.2,
+        "rh_pct": 57.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 14 km upstream",
+            "contribution": 2.7133
+          },
+          {
+            "name": "advected_rain_lead",
+            "label_en": "Extrapolated storm cell arriving with 26.1 mm/h rain rate",
+            "contribution": 2.5799
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 27.0 (increases risk)",
+            "contribution": 2.5793
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (increases risk)",
+            "contribution": 0.6325
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T15:00:00Z",
+      "rain_now_mm_h": 1.19,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T15:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.12,
+          "rain_p50": 0.17,
+          "rain_p90": 0.34,
+          "lri": 1.7,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.19,
+          "rain_p90": 0.36,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.05,
+          "rain_p50": 0.23,
+          "rain_p90": 0.44,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.19,
+          "rain_p90": 0.67,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.02,
+          "rain_p50": 0.49,
+          "rain_p90": 1.77,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.02,
+          "rain_p50": 0.22,
+          "rain_p90": 0.63,
+          "lri": 1.8,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 96.0,
+        "from_deg": 276.0,
+        "speed_kmh": 54.7
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 140.0,
+        "cin": null,
+        "t2m_c": 25.4,
+        "rh_pct": 78.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 77 km upstream",
+            "contribution": 0.5943
+          },
+          {
+            "name": "storm_speed_kmh",
+            "label_en": "Storm tracking at 55 km/h toward location",
+            "contribution": -0.4025
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.3825
+          },
+          {
+            "name": "rain_tendency_30m",
+            "label_en": "Cell intensification tendency of -25.9 mm/h over past 30 min",
+            "contribution": -0.3039
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T15:30:00Z",
+      "rain_now_mm_h": 0.08,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T15:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.14,
+          "lri": 1.7,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.01,
+          "rain_p50": 0.08,
+          "rain_p90": 0.18,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.003,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.1,
+          "rain_p90": 0.29,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.27,
+          "lri": 1.8,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.11,
+          "rain_p90": 0.71,
+          "lri": 1.7,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T18:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.002,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.16,
+          "rain_p90": 0.88,
+          "lri": 1.7,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 93.5,
+        "from_deg": 273.5,
+        "speed_kmh": 28.3
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 140.0,
+        "cin": null,
+        "t2m_c": 25.4,
+        "rh_pct": 78.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 79 km upstream",
+            "contribution": 0.6621
+          },
+          {
+            "name": "rain_tendency_30m",
+            "label_en": "Cell intensification tendency of -1.1 mm/h over past 30 min",
+            "contribution": -0.4905
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.4303
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 0.1 (reduces risk)",
+            "contribution": -0.2838
+          }
+        ]
+      }
+    },
+    {
+      "issue_time": "2024-05-09T16:00:00Z",
+      "rain_now_mm_h": 0.05,
+      "leads": [
+        {
+          "lead_min": 30,
+          "valid_start": "2024-05-09T16:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.05,
+          "rain_p90": 0.12,
+          "lri": 4.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 60,
+          "valid_start": "2024-05-09T16:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.03,
+          "rain_p90": 0.13,
+          "lri": 4.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 90,
+          "valid_start": "2024-05-09T17:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.004,
+          "p_final": 0.001,
+          "rain_p10": 0.0,
+          "rain_p50": 0.06,
+          "rain_p90": 0.19,
+          "lri": 4.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 120,
+          "valid_start": "2024-05-09T17:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.01,
+          "rain_p90": 0.16,
+          "lri": 4.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 150,
+          "valid_start": "2024-05-09T18:00:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.006,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.08,
+          "rain_p90": 0.25,
+          "lri": 4.4,
+          "severity": "low"
+        },
+        {
+          "lead_min": 180,
+          "valid_start": "2024-05-09T18:30:00Z",
+          "p_ens": 0.0,
+          "p_ml": 0.005,
+          "p_final": 0.002,
+          "rain_p10": 0.0,
+          "rain_p50": 0.14,
+          "rain_p90": 0.28,
+          "lri": 4.4,
+          "severity": "low"
+        }
+      ],
+      "eta_window_min": null,
+      "motion": {
+        "heading_deg": 87.2,
+        "from_deg": 267.2,
+        "speed_kmh": 30.5
+      },
+      "confidence": "medium",
+      "alert": {
+        "state": "none",
+        "severity": null,
+        "is_new": false,
+        "reason": "No immediate convective threat within 60 minutes"
+      },
+      "explain": {
+        "cape": 360.0,
+        "cin": null,
+        "t2m_c": 25.2,
+        "rh_pct": 79.0,
+        "top_features": [
+          {
+            "name": "distance_to_core_km",
+            "label_en": "Convective squall core located 83 km upstream",
+            "contribution": 1.0306
+          },
+          {
+            "name": "lead_minutes",
+            "label_en": "lead_minutes = 30.0 (reduces risk)",
+            "contribution": -0.5836
+          },
+          {
+            "name": "rain_current_3x3",
+            "label_en": "rain_current_3x3 = 0.0 (reduces risk)",
+            "contribution": -0.2787
+          },
+          {
+            "name": "rain_tendency_30m",
+            "label_en": "Cell intensification tendency of -0.0 mm/h over past 30 min",
+            "contribution": 0.2652
+          }
+        ]
+      }
+    }
+  ]
+}

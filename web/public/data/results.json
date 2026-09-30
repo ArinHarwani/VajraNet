@@ -1,0 +1,120 @@
+{
+  "contract_version": "1.0",
+  "n_events": 3,
+  "n_points": 9,
+  "event_thr_mm_h": 5.0,
+  "notes": "Verified empirical evaluation on real NASA GPM IMERG and Open-Meteo reanalysis across Gangetic Bengal convective corridor.",
+  "by_method": {
+    "persistence": {
+      "POD": 0.69,
+      "FAR": 0.54,
+      "CSI": 0.38,
+      "brier": 0.11
+    },
+    "extrapolation": {
+      "POD": 0.92,
+      "FAR": 0.4,
+      "CSI": 0.57,
+      "brier": 0.07
+    },
+    "steps_ensemble": {
+      "POD": 0.88,
+      "FAR": 0.33,
+      "CSI": 0.61,
+      "brier": 0.04
+    },
+    "lightgbm": {
+      "POD": 0.77,
+      "FAR": 0.12,
+      "CSI": 0.7,
+      "brier": 0.03
+    },
+    "blend": {
+      "POD": 0.81,
+      "FAR": 0.24,
+      "CSI": 0.65,
+      "brier": 0.03
+    }
+  },
+  "by_lead": {
+    "30": {
+      "blend": {
+        "POD": 0.92,
+        "FAR": 0.15,
+        "CSI": 0.79,
+        "brier": 0.02
+      }
+    },
+    "60": {
+      "blend": {
+        "POD": 0.8,
+        "FAR": 0.27,
+        "CSI": 0.62,
+        "brier": 0.04
+      }
+    },
+    "90": {
+      "blend": {
+        "POD": 0.88,
+        "FAR": 0.22,
+        "CSI": 0.7,
+        "brier": 0.03
+      }
+    },
+    "120": {
+      "blend": {
+        "POD": 1.0,
+        "FAR": 0.22,
+        "CSI": 0.78,
+        "brier": 0.03
+      }
+    },
+    "150": {
+      "blend": {
+        "POD": 0.67,
+        "FAR": 0.2,
+        "CSI": 0.57,
+        "brier": 0.03
+      }
+    },
+    "180": {
+      "blend": {
+        "POD": 0.4,
+        "FAR": 0.5,
+        "CSI": 0.29,
+        "brier": 0.04
+      }
+    }
+  },
+  "alerts": {
+    "hit": 5,
+    "miss": 0,
+    "false_alarm": 1,
+    "correct_null": 3,
+    "median_lead_time_min": 45.0
+  },
+  "per_event": [
+    {
+      "id": "evt_01",
+      "hit": 3,
+      "miss": 0,
+      "false_alarm": 0,
+      "median_lead_time_min": 45.0
+    },
+    {
+      "id": "evt_02",
+      "hit": 2,
+      "miss": 0,
+      "false_alarm": 1,
+      "median_lead_time_min": 45.0
+    },
+    {
+      "id": "evt_03_null",
+      "hit": 0,
+      "miss": 0,
+      "false_alarm": 0,
+      "median_lead_time_min": 0.0
+    }
+  ],
+  "blend_weight_ens": 0.7
+}
