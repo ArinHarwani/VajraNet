@@ -2,14 +2,23 @@
 
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { Play, Pause, ChevronLeft, ChevronRight, Award, Info, AlertCircle, ShieldCheck } from "lucide-react";
+import {
+  Play,
+  Pause,
+  ChevronLeft,
+  ChevronRight,
+  Award,
+  ShieldCheck,
+  Compass,
+  MapPin,
+} from "lucide-react";
 import { formatUtcToIst } from "@/lib/time";
 
 const MapLibreView = dynamic(() => import("@/components/MapLibreView"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full min-h-[360px] bg-slate-900 flex items-center justify-center text-slate-500 text-xs">
-      Loading Replay Canvas...
+    <div className="w-full h-full min-h-[360px] bg-[#F1F5F9] flex items-center justify-center text-slate-500 text-xs font-mono">
+      Initializing Replay Engine...
     </div>
   ),
 });
@@ -94,16 +103,20 @@ export default function ReplayPage() {
   );
 
   return (
-    <div className="max-w-6xl mx-auto p-4 sm:p-6 space-y-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 space-y-6">
       {/* Header & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+      <div className="razor-card p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse" />
-            <h1 className="text-xl font-bold text-white tracking-tight">Replay Theatre</h1>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-mono">P0-1</span>
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#0B63E5] animate-pulse" />
+            <h1 className="text-lg sm:text-xl font-extrabold text-[#0F172A] tracking-tight">
+              Replay Theatre
+            </h1>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#EFF6FF] text-[#0B63E5] font-mono font-bold border border-[#BFDBFE]">
+              GROUND TRUTH
+            </span>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-500 mt-1">
             Compare AI extrapolation nowcast against verified observed satellite precipitation.
           </p>
         </div>
@@ -113,7 +126,7 @@ export default function ReplayPage() {
           <select
             value={selectedEventId}
             onChange={(e) => setSelectedEventId(e.target.value)}
-            className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200"
+            className="bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] rounded-xl px-3 py-1.5 text-xs text-[#0F172A] font-semibold cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B63E5]/20 focus:border-[#0B63E5] focus:bg-white"
           >
             {events.map((ev) => (
               <option key={ev.id} value={ev.id}>
@@ -126,7 +139,7 @@ export default function ReplayPage() {
           <select
             value={selectedPointId}
             onChange={(e) => setSelectedPointId(e.target.value)}
-            className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200"
+            className="bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] rounded-xl px-3 py-1.5 text-xs text-[#0F172A] font-semibold cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B63E5]/20 focus:border-[#0B63E5] focus:bg-white"
           >
             {currentEvent?.points?.map((pt: any) => (
               <option key={pt.id} value={pt.id}>
@@ -138,43 +151,43 @@ export default function ReplayPage() {
           {/* Results Toggle */}
           <button
             onClick={() => setShowResultsTable(!showResultsTable)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 border transition-all ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 border transition-all ${
               showResultsTable
-                ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
-                : "bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700"
+                ? "bg-[#FFFBEB] text-[#B45309] border-[#FDE68A] shadow-sm"
+                : "bg-white text-slate-700 border-[#E2E8F0] hover:bg-[#F8FAFC]"
             }`}
           >
-            <Award className="w-3.5 h-3.5" />
+            <Award className="w-3.5 h-3.5 text-[#B45309]" />
             <span>Scorecard</span>
           </button>
         </div>
       </div>
 
-      {/* Mandatory "Alert Would Have Fired At" Banner (PRD_C §Phase C3 Task 2) */}
+      {/* "Alert Would Have Fired At" Banner */}
       {pointData?.summary && (
         <div
-          className={`p-4 rounded-xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg ${
+          className={`razor-card p-5 border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm ${
             pointData.summary.outcome === "hit"
-              ? "bg-gradient-to-r from-emerald-950/60 to-slate-900 border-emerald-800/40 text-emerald-200"
+              ? "border-[#A7F3D0] bg-[#ECFDF5]"
               : pointData.summary.outcome === "correct_null"
-              ? "bg-gradient-to-r from-blue-950/60 to-slate-900 border-blue-800/40 text-blue-200"
-              : "bg-slate-900 border-slate-800 text-slate-300"
+              ? "border-[#BFDBFE] bg-[#EFF6FF]"
+              : "border-[#E2E8F0] bg-white"
           }`}
         >
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-              <ShieldCheck className="w-6 h-6 text-emerald-400" />
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-white border border-[#A7F3D0] flex items-center justify-center text-[#059669] flex-shrink-0 shadow-sm">
+              <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-sm font-semibold">
+              <div className="text-xs sm:text-sm font-semibold text-[#0F172A]">
                 {pointData.summary.outcome === "hit" && (
                   <span>
                     Alert would have fired at{" "}
-                    <strong className="text-emerald-300 underline underline-offset-2">
+                    <strong className="text-[#059669] underline underline-offset-4">
                       {formatUtcToIst(pointData.summary.alert_fired_at)}
                     </strong>
                     , exactly{" "}
-                    <span className="font-bold text-white bg-emerald-500/20 px-1.5 py-0.5 rounded">
+                    <span className="font-extrabold text-[#059669] bg-white px-2 py-0.5 rounded-full border border-[#A7F3D0]">
                       {pointData.summary.lead_time_min} min
                     </span>{" "}
                     before storm onset ({formatUtcToIst(pointData.summary.observed_onset_start)}).
@@ -186,134 +199,151 @@ export default function ReplayPage() {
                   </span>
                 )}
               </div>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Outcome: <span className="font-mono font-semibold uppercase">{pointData.summary.outcome}</span> · Location: {pointData.point?.name}
+              <p className="text-[11px] text-slate-500 mt-1">
+                Outcome:{" "}
+                <span className="font-mono font-bold uppercase text-[#059669]">
+                  {pointData.summary.outcome}
+                </span>{" "}
+                · Location: {pointData.point?.name}
               </p>
             </div>
           </div>
-          <div className="text-xs font-mono bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800 text-slate-300 whitespace-nowrap">
+          <div className="text-xs font-mono bg-white px-3 py-1.5 rounded-xl border border-[#A7F3D0] text-[#0F172A] whitespace-nowrap self-start sm:self-auto font-medium shadow-sm">
             Point ID: {selectedPointId}
           </div>
         </div>
       )}
 
-      {/* Model Performance Scorecard Modal / Table */}
+      {/* Model Benchmark Scorecard Table */}
       {showResultsTable && resultsData && (
-        <div className="bg-slate-900 border border-amber-500/30 rounded-xl p-5 shadow-2xl animate-in fade-in duration-200">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+        <div className="razor-card p-6 border-[#FDE68A] shadow-lg animate-in fade-in duration-200">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E2E8F0] mb-4">
             <div className="flex items-center gap-2">
-              <Award className="w-5 h-5 text-amber-400" />
-              <h2 className="text-sm font-bold text-slate-100">Model Benchmark Scorecard (results.json)</h2>
+              <Award className="w-5 h-5 text-[#B45309]" />
+              <h2 className="text-sm font-bold text-[#0F172A]">Model Benchmark Scorecard</h2>
             </div>
-            <span className="text-[11px] text-slate-400 font-mono">
+            <span className="text-[11px] text-slate-600 font-mono bg-[#F8FAFC] px-2.5 py-1 rounded-full border border-[#E2E8F0]">
               Threshold: {resultsData.event_thr_mm_h} mm/h
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 mb-4 italic">{resultsData.notes}</p>
+          <p className="text-xs text-slate-500 mb-4">{resultsData.notes}</p>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 text-slate-400">
-                  <th className="py-2 px-3 font-semibold">Methodology</th>
-                  <th className="py-2 px-3 font-semibold">POD (Hit Rate ↑)</th>
-                  <th className="py-2 px-3 font-semibold">FAR (False Alarm ↓)</th>
-                  <th className="py-2 px-3 font-semibold">CSI (Threat Score ↑)</th>
-                  <th className="py-2 px-3 font-semibold">Brier Score ↓</th>
+                <tr className="border-b border-[#E2E8F0] text-slate-500">
+                  <th className="py-2.5 px-3 font-semibold">Methodology</th>
+                  <th className="py-2.5 px-3 font-semibold">POD (Hit Rate ↑)</th>
+                  <th className="py-2.5 px-3 font-semibold">FAR (False Alarm ↓)</th>
+                  <th className="py-2.5 px-3 font-semibold">CSI (Threat Score ↑)</th>
+                  <th className="py-2.5 px-3 font-semibold">Brier Score ↓</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-mono">
+              <tbody className="divide-y divide-[#F1F5F9] font-mono">
                 {Object.entries(resultsData.by_method || {}).map(([method, metrics]: any) => (
                   <tr
                     key={method}
-                    className={method === "blend" ? "bg-blue-950/40 text-blue-300 font-bold" : "text-slate-300"}
+                    className={
+                      method === "blend"
+                        ? "bg-[#EFF6FF] text-[#0B63E5] font-bold"
+                        : "text-slate-700"
+                    }
                   >
-                    <td className="py-2.5 px-3 capitalize flex items-center gap-2">
-                      {method === "blend" && <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />}
+                    <td className="py-3 px-3 capitalize flex items-center gap-2">
+                      {method === "blend" && <span className="w-2 h-2 rounded-full bg-[#0B63E5]" />}
                       {method.replace("_", " ")}
                     </td>
-                    <td className="py-2.5 px-3">{(metrics.POD * 100).toFixed(0)}%</td>
-                    <td className="py-2.5 px-3">{(metrics.FAR * 100).toFixed(0)}%</td>
-                    <td className="py-2.5 px-3 font-semibold text-white">{metrics.CSI.toFixed(2)}</td>
-                    <td className="py-2.5 px-3">{metrics.brier.toFixed(2)}</td>
+                    <td className="py-3 px-3">{(metrics.POD * 100).toFixed(0)}%</td>
+                    <td className="py-3 px-3">{(metrics.FAR * 100).toFixed(0)}%</td>
+                    <td className="py-3 px-3 font-bold text-[#0F172A]">{metrics.CSI.toFixed(2)}</td>
+                    <td className="py-3 px-3">{metrics.brier.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-4 text-xs text-slate-400">
+          <div className="mt-4 pt-4 border-t border-[#E2E8F0] flex flex-wrap gap-4 text-xs text-slate-600">
             <div>
-              Alerts: <span className="text-emerald-400 font-bold">{resultsData.alerts?.hit} Hits</span> ·{" "}
-              <span className="text-rose-400 font-bold">{resultsData.alerts?.miss} Misses</span> ·{" "}
-              <span className="text-amber-400 font-bold">{resultsData.alerts?.false_alarm} False Alarms</span>
+              Alerts: <span className="text-[#059669] font-bold">{resultsData.alerts?.hit} Hits</span>{" "}
+              · <span className="text-[#DC2626] font-bold">{resultsData.alerts?.miss} Misses</span> ·{" "}
+              <span className="text-[#D97706] font-bold">{resultsData.alerts?.false_alarm} False Alarms</span>
             </div>
             <div>
-              Median Lead Time: <span className="text-white font-bold">{resultsData.alerts?.median_lead_time_min} minutes</span>
+              Median Lead Time:{" "}
+              <span className="text-[#0F172A] font-bold">
+                {resultsData.alerts?.median_lead_time_min} minutes
+              </span>
             </div>
           </div>
         </div>
       )}
 
       {/* Main Scrubber Toolbar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3">
+      <div className="razor-card p-4 sm:p-5 space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="p-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium flex items-center gap-2 transition-all shadow-md shadow-blue-500/20"
+              className="p-2.5 rounded-xl bg-[#0B63E5] hover:bg-[#0951bd] text-white font-semibold flex items-center gap-2 transition-all shadow-md shadow-blue-500/20 active:scale-95"
             >
               {isPlaying ? <Pause className="w-4 h-4 fill-white" /> : <Play className="w-4 h-4 fill-white" />}
-              <span className="text-xs font-semibold">{isPlaying ? "Pause" : "Play Sequence"}</span>
+              <span className="text-xs">{isPlaying ? "Pause" : "Play Sequence"}</span>
             </button>
 
             <button
               disabled={activeIssueIndex === 0}
               onClick={() => setActiveIssueIndex((prev) => Math.max(0, prev - 1))}
-              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-40 text-slate-300"
+              className="p-2 rounded-xl bg-[#F8FAFC] hover:bg-[#F1F5F9] disabled:opacity-40 text-slate-700 border border-[#E2E8F0] transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               disabled={activeIssueIndex === issueTimes.length - 1}
               onClick={() => setActiveIssueIndex((prev) => Math.min(issueTimes.length - 1, prev + 1))}
-              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-40 text-slate-300"
+              className="p-2 rounded-xl bg-[#F8FAFC] hover:bg-[#F1F5F9] disabled:opacity-40 text-slate-700 border border-[#E2E8F0] transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
 
             <div className="text-xs">
-              <span className="text-slate-400">Issue Time (T):</span>{" "}
-              <strong className="text-blue-400 font-mono text-sm ml-1">
+              <span className="text-slate-500 font-medium">Issue Time:</span>{" "}
+              <strong className="text-[#0B63E5] font-mono text-sm ml-1">
                 {currentIssueTime ? formatUtcToIst(currentIssueTime, true) : "Loading..."}
               </strong>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            {/* View Mode Toggle */}
-            <div className="flex bg-slate-950 p-1 rounded-lg border border-slate-800 text-xs">
+            {/* View Mode Segmented Pill */}
+            <div className="razor-pill-container flex text-xs">
               <button
                 onClick={() => setViewMode("split")}
-                className={`px-3 py-1 rounded font-medium ${
-                  viewMode === "split" ? "bg-slate-800 text-white shadow" : "text-slate-400"
+                className={`px-3 py-1 rounded-full font-bold transition-all ${
+                  viewMode === "split"
+                    ? "bg-white text-[#0F172A] shadow-sm border border-[#E2E8F0]"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                Side-by-Side Split
+                Split
               </button>
               <button
                 onClick={() => setViewMode("forecast")}
-                className={`px-3 py-1 rounded font-medium ${
-                  viewMode === "forecast" ? "bg-slate-800 text-white shadow" : "text-slate-400"
+                className={`px-3 py-1 rounded-full font-bold transition-all ${
+                  viewMode === "forecast"
+                    ? "bg-white text-[#0F172A] shadow-sm border border-[#E2E8F0]"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                Forecast Only
+                Forecast
               </button>
               <button
                 onClick={() => setViewMode("observed")}
-                className={`px-3 py-1 rounded font-medium ${
-                  viewMode === "observed" ? "bg-slate-800 text-white shadow" : "text-slate-400"
+                className={`px-3 py-1 rounded-full font-bold transition-all ${
+                  viewMode === "observed"
+                    ? "bg-white text-[#0F172A] shadow-sm border border-[#E2E8F0]"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Ground Truth
@@ -322,14 +352,16 @@ export default function ReplayPage() {
 
             {/* Lead selector */}
             <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-slate-400">Lead:</span>
-              <div className="flex bg-slate-950 p-0.5 rounded-lg border border-slate-800">
+              <span className="text-slate-500 font-medium">Lead:</span>
+              <div className="razor-pill-container flex">
                 {["30", "60", "90", "120", "180"].map((lead) => (
                   <button
                     key={lead}
                     onClick={() => setSelectedLead(lead)}
-                    className={`px-2 py-0.5 rounded font-mono ${
-                      selectedLead === lead ? "bg-blue-600 text-white font-bold" : "text-slate-400 hover:text-slate-200"
+                    className={`px-2 py-0.5 rounded-full font-mono font-bold text-[11px] transition-all ${
+                      selectedLead === lead
+                        ? "bg-[#0B63E5] text-white"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
                     +{lead}m
@@ -341,7 +373,7 @@ export default function ReplayPage() {
         </div>
 
         {/* Timeline Range Slider */}
-        <div>
+        <div className="pt-1">
           <input
             type="range"
             min={0}
@@ -351,11 +383,11 @@ export default function ReplayPage() {
               setIsPlaying(false);
               setActiveIssueIndex(Number(e.target.value));
             }}
-            className="w-full accent-blue-500 cursor-pointer h-2 bg-slate-800 rounded-lg"
+            className="w-full accent-[#0B63E5] cursor-pointer h-2 bg-[#F1F5F9] rounded-lg border border-[#E2E8F0]"
           />
-          <div className="flex justify-between text-[11px] font-mono text-slate-400 mt-1">
+          <div className="flex justify-between text-[11px] font-mono text-slate-500 mt-1.5">
             <span>{issueTimes[0] ? formatUtcToIst(issueTimes[0]) : "Start"}</span>
-            <span className="text-blue-400 font-bold">
+            <span className="text-[#0B63E5] font-bold">
               Step {activeIssueIndex + 1} of {issueTimes.length}
             </span>
             <span>{issueTimes[issueTimes.length - 1] ? formatUtcToIst(issueTimes[issueTimes.length - 1]) : "End"}</span>
@@ -364,20 +396,25 @@ export default function ReplayPage() {
       </div>
 
       {/* Dual Screen Display Canvas */}
-      <div className={`grid gap-4 ${viewMode === "split" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
-        {/* Left / Main: Forecast Frame */}
+      <div className={`grid gap-5 ${viewMode === "split" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+        {/* Left: Forecast Frame */}
         {(viewMode === "split" || viewMode === "forecast") && (
-          <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden flex flex-col">
-            <div className="px-4 py-2.5 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between text-xs">
-              <span className="font-semibold text-blue-400 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-blue-500" />
+          <div className="razor-card overflow-hidden flex flex-col shadow-sm">
+            <div className="px-4 py-3 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between text-xs">
+              <span className="font-bold text-[#0B63E5] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#0B63E5] animate-pulse" />
                 AI Nowcast (Lead +{selectedLead} min)
               </span>
-              <span className="font-mono text-slate-400">
-                Valid: {currentIssueTime ? formatUtcToIst(new Date(new Date(currentIssueTime).getTime() + (Number(selectedLead) - 30) * 60000).toISOString()) : ""}
+              <span className="font-mono text-slate-500 text-[11px]">
+                Valid:{" "}
+                {currentIssueTime
+                  ? formatUtcToIst(
+                      new Date(new Date(currentIssueTime).getTime() + (Number(selectedLead) - 30) * 60000).toISOString()
+                    )
+                  : ""}
               </span>
             </div>
-            <div className="h-[400px] w-full">
+            <div className="h-[420px] w-full">
               <MapLibreView
                 bbox={currentEvent?.bbox}
                 imageUrl={fcImageUrl}
@@ -391,17 +428,17 @@ export default function ReplayPage() {
           </div>
         )}
 
-        {/* Right / Secondary: Observed Frame */}
+        {/* Right: Observed Frame */}
         {(viewMode === "split" || viewMode === "observed") && (
-          <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden flex flex-col">
-            <div className="px-4 py-2.5 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between text-xs">
-              <span className="font-semibold text-emerald-400 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                Ground Truth Verification (Observed IMERG)
+          <div className="razor-card overflow-hidden flex flex-col shadow-sm">
+            <div className="px-4 py-3 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between text-xs">
+              <span className="font-bold text-[#059669] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#10B981]" />
+                Ground Truth (Observed IMERG Satellite)
               </span>
-              <span className="font-mono text-slate-400">Satellite Rain</span>
+              <span className="font-mono text-slate-500 text-[11px]">NASA Satellite Rain</span>
             </div>
-            <div className="h-[400px] w-full">
+            <div className="h-[420px] w-full">
               <MapLibreView
                 bbox={currentEvent?.bbox}
                 imageUrl={obsImageUrl}
@@ -418,31 +455,37 @@ export default function ReplayPage() {
 
       {/* Point Threat Details at this Issue Step */}
       {currentTimelineEntry && (
-        <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div className="razor-card p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 text-xs">
           <div>
-            <div className="font-semibold text-slate-200">Point Situation ({pointData.point?.name}):</div>
-            <p className="text-slate-400 mt-0.5">{currentTimelineEntry.alert?.reason}</p>
+            <div className="font-bold text-[#0F172A] flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#0B63E5]" />
+              <span>Situation at {pointData?.point?.name}:</span>
+            </div>
+            <p className="text-slate-600 mt-0.5">{currentTimelineEntry.alert?.reason}</p>
           </div>
           <div className="flex gap-4 font-mono">
             <div>
               <span className="text-slate-500 block text-[10px]">CURRENT RAIN</span>
-              <span className="font-bold text-slate-200">{currentTimelineEntry.rain_now_mm_h} mm/h</span>
+              <span className="font-bold text-[#0F172A]">{currentTimelineEntry.rain_now_mm_h} mm/h</span>
             </div>
             <div>
               <span className="text-slate-500 block text-[10px]">MOTION BEARING</span>
-              <span className="font-bold text-amber-400">
-                {currentTimelineEntry.motion ? `${currentTimelineEntry.motion.heading_deg}° (${currentTimelineEntry.motion.speed_kmh} km/h)` : "Stationary"}
+              <span className="font-bold text-[#B45309] flex items-center gap-1">
+                <Compass className="w-3 h-3" />
+                {currentTimelineEntry.motion
+                  ? `${currentTimelineEntry.motion.heading_deg}° (${currentTimelineEntry.motion.speed_kmh} km/h)`
+                  : "Stationary"}
               </span>
             </div>
             <div>
               <span className="text-slate-500 block text-[10px]">ALERT STATUS</span>
               <span
-                className={`font-bold px-2 py-0.5 rounded text-[11px] uppercase ${
+                className={`font-bold px-2.5 py-0.5 rounded-full text-[11px] uppercase ${
                   currentTimelineEntry.alert?.state === "emergency"
-                    ? "bg-rose-500/20 text-rose-400 border border-rose-500/30"
+                    ? "bg-[#FEF2F2] text-[#DC2626] border border-[#FECACA]"
                     : currentTimelineEntry.alert?.state === "alert"
-                    ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
-                    : "bg-slate-800 text-slate-400"
+                    ? "bg-[#FFFBEB] text-[#B45309] border border-[#FDE68A]"
+                    : "bg-[#F1F5F9] text-slate-600 border border-[#E2E8F0]"
                 }`}
               >
                 {currentTimelineEntry.alert?.state}

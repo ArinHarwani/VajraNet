@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Sliders, Lock, Unlock, Play, Square, Bell, Radio, CheckCircle, AlertTriangle } from "lucide-react";
+import {
+  Sliders,
+  Lock,
+  Play,
+  Square,
+  Bell,
+  Radio,
+} from "lucide-react";
 import { supabase, SIM_CHANNEL_NAME } from "@/lib/supabase";
 
 export default function ControlPage() {
@@ -42,7 +49,7 @@ export default function ControlPage() {
       t0_epoch_ms: Date.now(),
     };
 
-    // 1. Supabase Realtime Broadcast (reaches all judges' phones across the internet)
+    // 1. Supabase Realtime Broadcast
     if (supabase) {
       const channel = supabase.channel(SIM_CHANNEL_NAME, {
         config: { broadcast: { self: true } },
@@ -55,7 +62,7 @@ export default function ControlPage() {
       });
     }
 
-    // 2. Offline fallback BroadcastChannel (same browser / device)
+    // 2. Offline fallback BroadcastChannel
     if (typeof window !== "undefined" && "BroadcastChannel" in window) {
       const bc = new BroadcastChannel("vajranet-local-channel");
       bc.postMessage(payload);
@@ -67,30 +74,32 @@ export default function ControlPage() {
 
   if (!isUnlocked) {
     return (
-      <div className="max-w-md mx-auto p-4 sm:p-6 mt-12">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-5 text-center shadow-2xl">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 mx-auto flex items-center justify-center">
+      <div className="max-w-md mx-auto px-4 pt-16 pb-12">
+        <div className="razor-card p-6 sm:p-8 space-y-6 text-center shadow-xl">
+          <div className="w-12 h-12 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] text-[#0B63E5] mx-auto flex items-center justify-center shadow-sm">
             <Lock className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-white tracking-tight">Judge Demo Controller</h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Passcode protected to prevent accidental judge phone triggers.
+            <h1 className="text-lg font-extrabold text-[#0F172A] tracking-tight">
+              Judge Demo Controller
+            </h1>
+            <p className="text-xs text-slate-500 mt-1">
+              Passcode protected to prevent accidental judge phone triggers during evaluation.
             </p>
           </div>
 
-          <form onSubmit={handleUnlock} className="space-y-3">
+          <form onSubmit={handleUnlock} className="space-y-3.5">
             <input
               type="password"
               placeholder="Enter Passcode (vajra2026)"
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-center text-white focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+              className="w-full bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] rounded-xl px-4 py-2.5 text-sm text-center text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#0B63E5]/20 focus:border-[#0B63E5] focus:bg-white font-mono transition-all"
             />
-            {errorMsg && <p className="text-xs text-rose-400 font-mono">{errorMsg}</p>}
+            {errorMsg && <p className="text-xs text-[#DC2626] font-mono font-medium">{errorMsg}</p>}
             <button
               type="submit"
-              className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors shadow-lg shadow-blue-500/25"
+              className="w-full py-3 rounded-xl bg-[#0B63E5] hover:bg-[#0951bd] text-white font-bold text-xs transition-all shadow-md shadow-blue-500/20"
             >
               Unlock Console
             </button>
@@ -101,48 +110,53 @@ export default function ControlPage() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-4 sm:p-6 space-y-6">
-      <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+    <div className="max-w-xl mx-auto px-4 sm:px-6 pt-6 pb-12 space-y-6">
+      {/* Header */}
+      <div className="razor-card p-5 flex items-center justify-between">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-[#ECFDF5] border border-[#A7F3D0] text-[#059669] flex items-center justify-center shadow-sm">
             <Radio className="w-5 h-5 animate-pulse" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-white tracking-tight">Realtime Sim Console</h1>
-            <p className="text-xs text-slate-400 font-mono">Channel: {SIM_CHANNEL_NAME}</p>
+            <h1 className="text-base sm:text-lg font-extrabold text-[#0F172A] tracking-tight">
+              Realtime Sim Console
+            </h1>
+            <p className="text-xs text-slate-500 font-mono">Channel: {SIM_CHANNEL_NAME}</p>
           </div>
         </div>
 
         <button
           onClick={() => setIsUnlocked(false)}
-          className="text-xs text-slate-400 hover:text-white px-2.5 py-1 rounded-lg bg-slate-800"
+          className="text-xs text-slate-600 hover:text-[#0F172A] px-3 py-1.5 rounded-xl bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-[#E2E8F0] font-medium transition-colors"
         >
           Lock
         </button>
       </div>
 
       {/* Broadcast Scenario Selector */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
+      <div className="razor-card p-5 sm:p-6 space-y-5">
         <div>
-          <label className="text-xs uppercase font-semibold text-slate-400 block mb-2">
+          <label className="text-xs uppercase font-bold tracking-wider text-slate-500 block mb-2.5">
             Select Storm Scenario:
           </label>
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {simScenarios.map((sc) => (
               <div
                 key={sc.id}
                 onClick={() => setSelectedScenario(sc.id)}
-                className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
+                className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
                   selectedScenario === sc.id
-                    ? "bg-blue-950/40 border-blue-500 text-white shadow-lg shadow-blue-500/10"
-                    : "bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200"
+                    ? "bg-[#EFF6FF] border-[#0B63E5] text-[#0F172A] shadow-sm ring-1 ring-[#0B63E5]/30"
+                    : "bg-[#F8FAFC] border-[#E2E8F0] text-slate-600 hover:text-slate-900 hover:bg-[#F1F5F9]"
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold">{sc.label}</span>
-                  <span className="text-[10px] font-mono text-amber-400">Peak LRI: {sc.peak_lri}</span>
+                  <span className="text-xs font-bold text-[#0F172A]">{sc.label}</span>
+                  <span className="text-[10px] font-mono font-bold text-[#B45309] bg-[#FFFBEB] px-2 py-0.5 rounded-full border border-[#FDE68A]">
+                    Peak LRI: {sc.peak_lri}
+                  </span>
                 </div>
-                <div className="flex gap-3 text-[10px] font-mono text-slate-400 mt-1.5">
+                <div className="flex gap-4 text-[10px] font-mono text-slate-500 mt-2">
                   <span>Start: {sc.start_distance_km} km</span>
                   <span>Speed: {sc.speed_kmh} km/h</span>
                   <span>Bearing: {sc.bearing_from_deg}°</span>
@@ -156,7 +170,7 @@ export default function ControlPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
           <button
             onClick={() => sendBroadcast("sim_start")}
-            className="py-3.5 px-4 rounded-xl bg-gradient-to-tr from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 active:scale-95 transition-all"
+            className="py-3.5 px-4 rounded-xl bg-gradient-to-tr from-[#EF4444] to-[#F43F5E] hover:from-red-600 hover:to-rose-600 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-md shadow-red-500/25 active:scale-95 transition-all"
           >
             <Play className="w-4 h-4 fill-white" />
             <span>Launch Live Storm</span>
@@ -164,7 +178,7 @@ export default function ControlPage() {
 
           <button
             onClick={() => sendBroadcast("sim_stop")}
-            className="py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs flex items-center justify-center gap-2 active:scale-95 transition-all"
+            className="py-3.5 px-4 rounded-xl bg-white hover:bg-[#F8FAFC] text-slate-700 border border-[#CBD5E1] font-bold text-xs flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm"
           >
             <Square className="w-4 h-4 fill-current" />
             <span>Stop Simulation</span>
@@ -173,16 +187,16 @@ export default function ControlPage() {
 
         <button
           onClick={() => sendBroadcast("test_alert")}
-          className="w-full py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
+          className="w-full py-2.5 rounded-xl bg-[#F8FAFC] hover:bg-[#F1F5F9] text-slate-700 border border-[#E2E8F0] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
         >
-          <Bell className="w-4 h-4 text-amber-400" />
+          <Bell className="w-4 h-4 text-[#D97706]" />
           <span>Broadcast Instant Test Warning</span>
         </button>
 
         {/* Broadcast Status Feedback */}
-        <div className="p-3 bg-slate-950 rounded-xl border border-slate-800/80 flex items-center justify-between text-[11px] font-mono">
-          <span className="text-slate-400">Status: {broadcastStatus}</span>
-          {lastSent && <span className="text-emerald-400">Last Sent: {lastSent}</span>}
+        <div className="p-3 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] flex items-center justify-between text-[11px] font-mono">
+          <span className="text-slate-500">Status: {broadcastStatus}</span>
+          {lastSent && <span className="text-[#059669] font-semibold">Last: {lastSent}</span>}
         </div>
       </div>
     </div>

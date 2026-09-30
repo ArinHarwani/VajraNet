@@ -1,14 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Zap, Volume2, ShieldAlert, RotateCcw, Clock, AlertTriangle, ShieldCheck } from "lucide-react";
+import {
+  Zap,
+  Volume2,
+  ShieldAlert,
+  Clock,
+  AlertTriangle,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function FlashBangPage() {
   const [timerRunning, setTimerRunning] = useState<boolean>(false);
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
   const [calculatedDistanceKm, setCalculatedDistanceKm] = useState<number | null>(null);
   const [history, setHistory] = useState<Array<{ time: string; seconds: number; distanceKm: number }>>([]);
-  const [shelterCountdown, setShelterCountdown] = useState<number | null>(null); // in seconds (30 mins = 1800s)
+  const [shelterCountdown, setShelterCountdown] = useState<number | null>(null);
 
   // Stopwatch for lightning -> thunder
   useEffect(() => {
@@ -41,16 +48,20 @@ export default function FlashBangPage() {
   const handleHeardThunder = () => {
     if (!timerRunning && elapsedSeconds === 0) return;
     setTimerRunning(false);
-    // Speed of sound: 343 m/s = 0.343 km/s (PRD_C §Phase C6 Task 3)
+    // Speed of sound: 343 m/s = 0.343 km/s
     const dist = elapsedSeconds * 0.343;
     setCalculatedDistanceKm(dist);
 
-    // Reset / restart the 30-minute shelter rule (1800 seconds)
+    // Reset 30-minute shelter rule (1800 seconds)
     setShelterCountdown(1800);
 
     setHistory((prev) => [
       {
-        time: new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+        time: new Date().toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }),
         seconds: Number(elapsedSeconds.toFixed(1)),
         distanceKm: Number(dist.toFixed(2)),
       },
@@ -65,125 +76,138 @@ export default function FlashBangPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4 sm:p-6 space-y-6">
-      {/* Header */}
-      <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl flex items-center gap-3">
-        <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
-          <Zap className="w-5 h-5 fill-amber-400" />
+    <div className="max-w-xl mx-auto px-4 sm:px-6 pt-6 pb-12 space-y-6">
+      {/* Header Banner */}
+      <div className="razor-card p-5 flex items-center gap-3.5">
+        <div className="w-10 h-10 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] flex items-center justify-center text-[#B45309] flex-shrink-0 shadow-sm">
+          <Zap className="w-5 h-5 fill-amber-500 text-amber-500" />
         </div>
         <div>
-          <h1 className="text-lg font-bold text-white tracking-tight">Flash-to-Bang Estimator</h1>
-          <p className="text-xs text-slate-400">
-            Speed of sound metric: 343 m/s = 0.343 km/s · 30-30 Safety Rule
+          <h1 className="text-base sm:text-lg font-extrabold text-[#0F172A] tracking-tight">
+            Flash-to-Bang Estimator
+          </h1>
+          <p className="text-xs text-slate-500">
+            Acoustic distance calculation (speed of sound = 343 m/s) · 30-30 Rule
           </p>
         </div>
       </div>
 
-      {/* Main Interactive Button Area */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
+      {/* Main Interactive Action Card */}
+      <div className="razor-card-hero p-6 sm:p-8 space-y-6">
         <div className="text-center">
-          <div className="text-4xl font-extrabold font-mono text-white tracking-wider">
-            {elapsedSeconds.toFixed(1)} <span className="text-lg font-normal text-slate-400">sec</span>
+          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-widest block mb-1 font-bold">
+            Elapsed Sound Delay
+          </span>
+          <div className="text-5xl font-black font-mono text-[#0F172A] tracking-wider">
+            {elapsedSeconds.toFixed(1)}{" "}
+            <span className="text-xl font-normal text-slate-400 font-sans">sec</span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
-            {timerRunning ? "Timing sound delay... Tap 'Heard Thunder' when sound arrives" : "Tap 'I Saw Lightning' when you see a flash"}
+          <p className="text-xs text-slate-500 mt-2">
+            {timerRunning
+              ? "Timing sound wave delay... Tap 'I Heard Thunder' immediately when the sound reaches you."
+              : "Tap 'I Saw Lightning' the moment you observe a flash."}
           </p>
         </div>
 
-        {/* Big Buttons */}
+        {/* Big Action Buttons */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
             onClick={handleSawLightning}
-            className="py-5 px-4 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 font-extrabold text-sm sm:text-base flex flex-col items-center justify-center gap-2 shadow-xl shadow-amber-500/20 active:scale-95 transition-all"
+            className="py-5 px-4 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 hover:from-amber-500 hover:to-yellow-400 text-slate-900 font-extrabold text-sm flex flex-col items-center justify-center gap-2 shadow-md shadow-amber-500/20 active:scale-95 transition-all duration-200 border border-amber-300"
           >
-            <Zap className="w-7 h-7 fill-slate-950" />
+            <Zap className="w-7 h-7 fill-slate-900" />
             <span>1. I Saw Lightning</span>
-            <span className="text-[10px] font-normal text-slate-900/80 uppercase">Starts Stopwatch</span>
+            <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider">
+              Starts Stopwatch
+            </span>
           </button>
 
           <button
             onClick={handleHeardThunder}
             disabled={!timerRunning && elapsedSeconds === 0}
-            className={`py-5 px-4 rounded-2xl font-extrabold text-sm sm:text-base flex flex-col items-center justify-center gap-2 shadow-xl transition-all ${
+            className={`py-5 px-4 rounded-2xl font-extrabold text-sm flex flex-col items-center justify-center gap-2 transition-all duration-200 ${
               timerRunning
-                ? "bg-gradient-to-tr from-blue-600 to-indigo-500 hover:from-blue-500 hover:to-indigo-400 text-white shadow-blue-500/30 active:scale-95 animate-pulse"
-                : "bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700"
+                ? "bg-[#0B63E5] hover:bg-[#0951bd] text-white shadow-lg shadow-blue-500/25 active:scale-95 animate-pulse"
+                : "bg-[#F1F5F9] text-slate-400 cursor-not-allowed border border-[#E2E8F0]"
             }`}
           >
             <Volume2 className="w-7 h-7" />
             <span>2. I Heard Thunder</span>
-            <span className="text-[10px] font-normal uppercase opacity-80">Calculates Distance</span>
+            <span className="text-[10px] font-medium uppercase tracking-wider opacity-90">
+              Calculates Strike Distance
+            </span>
           </button>
         </div>
 
-        {/* Distance Result & Shelter Warning */}
+        {/* Distance Result & Warning Card */}
         {calculatedDistanceKm !== null && (
           <div
             className={`p-5 rounded-2xl border transition-all animate-in zoom-in-95 duration-200 ${
               calculatedDistanceKm <= 10.0
-                ? "bg-rose-950/40 border-rose-800/80 text-rose-200"
-                : "bg-blue-950/40 border-blue-800/80 text-blue-200"
+                ? "bg-[#FEF2F2] border-[#FECACA] text-[#991B1B]"
+                : "bg-[#EFF6FF] border-[#BFDBFE] text-[#1E40AF]"
             }`}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <div>
-                <span className="text-xs uppercase tracking-wider font-semibold block text-slate-400">
+                <span className="text-xs uppercase tracking-wider font-bold block text-slate-600">
                   Calculated Strike Distance
                 </span>
-                <div className="text-3xl font-extrabold font-mono text-white mt-0.5">
-                  {calculatedDistanceKm.toFixed(2)} <span className="text-lg font-normal text-slate-300">km</span>
+                <div className="text-3xl sm:text-4xl font-black font-mono text-[#0F172A] mt-1">
+                  {calculatedDistanceKm.toFixed(2)}{" "}
+                  <span className="text-lg font-normal text-slate-500 font-sans">km</span>
                 </div>
               </div>
 
               {calculatedDistanceKm <= 10.0 ? (
-                <div className="p-3 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center gap-2">
-                  <ShieldAlert className="w-6 h-6 animate-bounce" />
-                  <span className="text-xs font-bold font-mono">DANGER ZONE</span>
+                <div className="px-3.5 py-2 rounded-xl bg-white text-[#DC2626] border border-[#FECACA] shadow-sm flex items-center gap-2">
+                  <ShieldAlert className="w-5 h-5 animate-bounce" />
+                  <span className="text-xs font-mono font-bold tracking-wider">DANGER ENVELOPE</span>
                 </div>
               ) : (
-                <div className="p-3 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center gap-2">
-                  <ShieldCheck className="w-6 h-6" />
-                  <span className="text-xs font-bold font-mono">MONITORING</span>
+                <div className="px-3.5 py-2 rounded-xl bg-white text-[#0B63E5] border border-[#BFDBFE] shadow-sm flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5" />
+                  <span className="text-xs font-mono font-bold tracking-wider">MONITORING</span>
                 </div>
               )}
             </div>
 
             {calculatedDistanceKm <= 10.0 ? (
-              <div className="mt-4 pt-3 border-t border-rose-800/40 text-xs text-rose-200 flex items-start gap-2">
-                <AlertTriangle className="w-4 h-4 flex-shrink-0 text-rose-400 mt-0.5" />
-                <span>
-                  <strong>TAKE SHELTER NOW:</strong> Strike is within 10 km (the danger envelope for deadly cloud-to-ground side flashes). Seek substantial indoor shelter immediately.
+              <div className="mt-4 pt-3.5 border-t border-[#FECACA] text-xs text-[#B91C1C] flex items-start gap-2.5">
+                <AlertTriangle className="w-4 h-4 flex-shrink-0 text-[#DC2626] mt-0.5" />
+                <span className="leading-relaxed">
+                  <strong>IMMEDIATE INDOOR SHELTER MANDATED:</strong> Strike occurred within 10 km (the danger envelope for deadly cloud-to-ground side flashes). Move indoors immediately.
                 </span>
               </div>
             ) : (
-              <div className="mt-4 pt-3 border-t border-blue-800/40 text-xs text-blue-200">
-                Strike is beyond 10 km, but storm cells can travel at 40+ km/h. Keep monitoring.
+              <div className="mt-4 pt-3 border-t border-[#BFDBFE] text-xs text-[#1D4ED8] leading-relaxed">
+                Strike is beyond 10 km, but storm cells can travel at 40+ km/h. Keep observing the sky.
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* 30-Minute Post-Thunder Shelter Rule Timer */}
+      {/* 30-Minute Safety Buffer Timer */}
       {shelterCountdown !== null && (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
+        <div className="razor-card p-5 space-y-3.5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-200">
-              <Clock className="w-4 h-4 text-blue-400" />
-              <span>30-Minute Safety Buffer Timer</span>
+            <div className="flex items-center gap-2 text-xs font-bold text-[#0F172A]">
+              <Clock className="w-4 h-4 text-[#0B63E5]" />
+              <span>30-Minute Post-Thunder Safety Rule</span>
             </div>
-            <span className="text-xs font-mono font-bold text-amber-400">
+            <span className="text-xs font-mono font-bold text-[#B45309] bg-[#FFFBEB] px-2.5 py-0.5 rounded-full border border-[#FDE68A]">
               {formatMinSec(shelterCountdown)} remaining
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 leading-relaxed">
-            The national lightning safety rule dictates waiting at least 30 minutes after hearing the last thunderclap before leaving shelter. Each new thunderclap resets this timer.
+          <p className="text-xs text-slate-500 leading-relaxed font-normal">
+            National lightning safety guidelines require waiting at least 30 minutes after the last audible thunderclap before leaving shelter.
           </p>
 
-          <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+          <div className="w-full bg-[#F1F5F9] h-2 rounded-full overflow-hidden border border-[#E2E8F0]">
             <div
-              className="bg-blue-500 h-full rounded-full transition-all"
+              className="bg-[#0B63E5] h-full rounded-full transition-all duration-300"
               style={{ width: `${(shelterCountdown / 1800) * 100}%` }}
             />
           </div>
@@ -192,14 +216,23 @@ export default function FlashBangPage() {
 
       {/* History Log */}
       {history.length > 0 && (
-        <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-4">
-          <span className="text-xs uppercase font-semibold text-slate-400 block mb-2">Recent Taps</span>
-          <div className="space-y-1.5 font-mono text-xs text-slate-300">
+        <div className="razor-card p-4">
+          <span className="text-[11px] uppercase font-bold tracking-wider text-slate-500 block mb-3 font-mono">
+            Recent Flash-to-Bang Records
+          </span>
+          <div className="space-y-2 font-mono text-xs text-slate-600">
             {history.map((h, i) => (
-              <div key={i} className="flex justify-between py-1 border-b border-slate-800/50">
-                <span>{h.time}</span>
-                <span>{h.seconds}s delay</span>
-                <span className={h.distanceKm <= 10.0 ? "text-rose-400 font-bold" : "text-slate-300"}>
+              <div
+                key={i}
+                className="flex justify-between items-center py-2 px-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0]"
+              >
+                <span className="text-slate-500">{h.time}</span>
+                <span className="text-slate-700 font-medium">{h.seconds}s delay</span>
+                <span
+                  className={`font-bold ${
+                    h.distanceKm <= 10.0 ? "text-[#DC2626]" : "text-[#0B63E5]"
+                  }`}
+                >
                   {h.distanceKm} km
                 </span>
               </div>
